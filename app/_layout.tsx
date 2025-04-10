@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Slot, SplashScreen } from 'expo-router'
+import { SplashScreen, Slot } from 'expo-router'
 import "./global.css"
 import { useFonts } from 'expo-font'
 
@@ -23,7 +23,7 @@ useEffect(() => {
 
 if (!fontLoaded && !error) return null
 
-  return <Slot/>
+  return <Slot />
 }
 
 export default RootLayout
