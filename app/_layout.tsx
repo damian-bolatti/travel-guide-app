@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { SplashScreen, Slot } from 'expo-router'
+import { SplashScreen, Slot, Stack } from 'expo-router'
 import "./global.css"
 import { useFonts } from 'expo-font'
 
@@ -27,7 +27,3 @@ if (!fontLoaded && !error) return null
 }
 
 export default RootLayout
-
-function UseFonts(arg0: {}): [any, any] {
-    throw new Error('Function not implemented.')
-}

@@ -1,5 +1,5 @@
 import { CityDTO } from "../dtos/CityDTO";
-import { City } from "../entities/city";
+import { City } from "../entities/City";
 
 export const mapCityFromDTO = (dto: CityDTO): City => ({
     id: dto.id,

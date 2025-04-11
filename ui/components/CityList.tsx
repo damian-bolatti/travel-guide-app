@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import CityCard from './CityCard';
-import { City } from '@/core/domain/entities/city';
+import { City } from '@/core/domain/entities/City';
 
 interface CityListProps {
   cities: City[];

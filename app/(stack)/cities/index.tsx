@@ -1,12 +1,32 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import CityList from '@/ui/components/CityList';
+import React, { useEffect } from 'react';
+import { View, Text } from 'react-native';
 
 const CitiesScreen = () => {
-  return (
-    <View>
-      <Text>CitiesScreen</Text>
-    </View>
-  )
-}
+  const { cities, isLoading, error, fetchCities } = useCitiesStore();
 
-export default CitiesScreen
+  useEffect(() => {
+    fetchCities();
+  }, []);
+
+  return (
+    <View className="flex-1 bg-gray-100 px-4 py-6">
+      <Text className="text-2xl font-bold mb-4 text-gray-900">Cities</Text>
+
+      {isLoading && (
+        <Text className="text-gray-600">Loading cities...</Text>
+      )}
+
+      {error && (
+        <Text className="text-red-500">Error: {error}</Text>
+      )}
+
+      {!isLoading && !error && (
+        <CityList cities={cities} />
+      )}
+    </View>
+  );
+};
+
+export default CitiesScreen;
