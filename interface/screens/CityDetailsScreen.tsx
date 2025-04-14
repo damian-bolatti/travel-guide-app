@@ -4,10 +4,12 @@ import { usePlaces } from '../hooks/usePlaces';
 import { useCities } from '../hooks/useCities';
 import Loader from '../shared/Loader';
 import PlaceList from '../components/PlaceList';
+import ErrorMessageProps from '../shared/ErrorMessage';
+
 
 const CityDetailsScreen = () => {
   const { selectedCity } = useCities();
-  const { places, isLoading, error, reset } = usePlaces();
+  const { places, isLoading, error, reset, fetchPlaces } = usePlaces();
 
 useEffect(() => {
     return () => {
@@ -31,6 +33,13 @@ useEffect(() => {
       <Text className="text-base text-gray-700 mb-4">Language: {selectedCity.language}</Text>
 
       {isLoading && <Loader message="Loading places..." />}
+
+      {error && (
+        <ErrorMessageProps
+        message={error}
+        onRetry={() => fetchPlaces(selectedCity.key)}
+      />
+      )}
 
       {places.length > 0 && (
         <PlaceList places={places} />
