@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { usePlaces } from '../hooks/usePlaces';
 import { useCities } from '../hooks/useCities';
 import Loader from '../shared/Loader';
+import PlaceList from '../components/PlaceList';
 
 const CityDetailsScreen = () => {
   const { selectedCity } = useCities();
@@ -32,18 +33,7 @@ useEffect(() => {
       {isLoading && <Loader message="Loading places..." />}
 
       {places.length > 0 && (
-        <View className="mt-4">
-          <Text className="text-lg font-semibold mb-2">Places</Text>
-          {places.map((place, idx) => (
-            <View key={idx} className="mb-3">
-              <Text className="text-base font-medium text-gray-900">{place.name}</Text>
-              <Text className="text-sm text-gray-600">{place.type}</Text>
-              <Text className="text-xs text-gray-400">
-                Lat: {place.coordinates[0]}, Lon: {place.coordinates[1]}
-              </Text>
-            </View>
-          ))}
-        </View>
+        <PlaceList places={places} />
       )}
     </ScrollView>
   );
