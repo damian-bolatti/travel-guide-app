@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { View, Text, ActivityIndicator, ScrollView } from 'react-native';
-import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
-import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
+import { View, Text, ScrollView } from 'react-native';
+import { usePlaces } from '../hooks/usePlaces';
+import { useCities } from '../hooks/useCities';
+import Loader from '../shared/Loader';
 
 const CityDetailsScreen = () => {
-  const { selectedCity } = useCitiesStore();
-  const { places, fetchPlaces, isLoading } = usePlacesStore();
+  const { selectedCity } = useCities();
+  const { places, isLoading, error, reset } = usePlaces();
 
-  useEffect(() => {
-    if (selectedCity) {
-      fetchPlaces(selectedCity.key);
-    }
-  }, [selectedCity]);
+useEffect(() => {
+    return () => {
+      reset();
+    };
+  }, []);
 
   if (!selectedCity) {
     return (
@@ -28,7 +29,7 @@ const CityDetailsScreen = () => {
       <Text className="text-base text-gray-700 mb-1">Currency: {selectedCity.currency}</Text>
       <Text className="text-base text-gray-700 mb-4">Language: {selectedCity.language}</Text>
 
-      {isLoading && <ActivityIndicator size="large" />}
+      {isLoading && <Loader message="Loading places..." />}
 
       {places.length > 0 && (
         <View className="mt-4">

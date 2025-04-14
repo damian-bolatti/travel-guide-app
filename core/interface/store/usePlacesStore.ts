@@ -8,7 +8,7 @@ interface PlacesState {
     isLoading: boolean;
     error: string | null;
     fetchPlaces: (key: string) => Promise<void>;
-    clearPlaces: () => void;
+    reset: () => void;
   }
   
   export const usePlacesStore = create<PlacesState>((set) => {
@@ -31,6 +31,6 @@ interface PlacesState {
         }
       },
   
-      clearPlaces: () => set({ places: [], error: null }),
+      reset: () => set({ places: [], error: null, isLoading: false }),
     };
   });
