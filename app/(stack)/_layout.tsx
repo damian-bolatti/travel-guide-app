@@ -7,7 +7,7 @@ const StackLayout = () => {
       <Stack.Screen
         name="cities/index"
         options={{
-          title: 'Cities',
+          title: 'Travel Guide App',
           headerTitleAlign: 'center',
           headerShadowVisible: false,
           headerTitleStyle: {
@@ -19,7 +19,7 @@ const StackLayout = () => {
       <Stack.Screen
         name="cities/cityDetails"
         options={{
-          title: 'Details',
+          title: 'City',
           headerTitleAlign: 'center',
           headerShadowVisible: false,
           headerTitleStyle: {
