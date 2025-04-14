@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { usePlaces } from '../hooks/usePlaces';
 import { useCities } from '../hooks/useCities';
 import Loader from '../shared/Loader';
 import PlaceList from '../components/PlaceList';
 import Retry from '../shared/Retry';
+import { useNavigation } from '@react-navigation/native';
 
 
 const CityDetailsScreen = () => {
+  const navigation = useNavigation();
   const { selectedCity } = useCities();
   const { places, isLoading, error, reset, fetchPlaces } = usePlaces();
 
   const showEmptyState = !isLoading && !error && places.length === 0;
+
+  useLayoutEffect(() => {
+    if (selectedCity) {
+      navigation.setOptions({ title: selectedCity.name });
+    }
+  }, [navigation, selectedCity]);
 
 useEffect(() => {
     return () => {
