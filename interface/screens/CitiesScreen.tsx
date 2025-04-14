@@ -3,29 +3,36 @@ import CityList from '@/interface/components/CityList';
 import React from 'react';
 import { View, Text } from 'react-native';
 import Loader from '../shared/Loader';
-import ErrorMessageProps from '../shared/ErrorMessage';
+import Retry from '../shared/Retry';
 
 const CitiesScreen = () => {
     const { cities, isLoading, error, fetchCities } = useCities();
 
+    const showEmptyState = !isLoading && !error && cities.length === 0;
+
   return (
     <View className="flex-1 bg-gray-100 px-4 py-6">
-      <Text className="text-2xl font-bold mb-4 text-gray-900">Cities</Text>
-
-      {isLoading && (
+        {isLoading && (
         <Loader message="Loading cities..." />
-      )}
+        )}
 
-      {error && (
-        <ErrorMessageProps
+        {error && (
+        <Retry
         message={error}
         onRetry={fetchCities}
-      />
-      )}
+        />
+        )}
 
-      {!isLoading && !error && (
+        {showEmptyState && (
+        <Retry
+            message="No cities available"
+            onRetry={fetchCities}
+        />
+        )}
+
+        {!isLoading && !error && cities.length > 0 && (
         <CityList cities={cities} />
-      )}
+        )}
     </View>
   );
 };

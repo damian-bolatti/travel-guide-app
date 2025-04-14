@@ -4,12 +4,14 @@ import { usePlaces } from '../hooks/usePlaces';
 import { useCities } from '../hooks/useCities';
 import Loader from '../shared/Loader';
 import PlaceList from '../components/PlaceList';
-import ErrorMessageProps from '../shared/ErrorMessage';
+import Retry from '../shared/Retry';
 
 
 const CityDetailsScreen = () => {
   const { selectedCity } = useCities();
   const { places, isLoading, error, reset, fetchPlaces } = usePlaces();
+
+  const showEmptyState = !isLoading && !error && places.length === 0;
 
 useEffect(() => {
     return () => {
@@ -27,23 +29,30 @@ useEffect(() => {
 
   return (
     <ScrollView className="flex-1 bg-white p-6">
-      <Text className="text-3xl font-bold mb-2">{selectedCity.name}</Text>
-      <Text className="text-lg text-gray-600 italic mb-2">{selectedCity.nativeName}</Text>
-      <Text className="text-base text-gray-700 mb-1">Currency: {selectedCity.currency}</Text>
-      <Text className="text-base text-gray-700 mb-4">Language: {selectedCity.language}</Text>
+        <Text className="text-3xl font-bold mb-2">{selectedCity.name}</Text>
+        <Text className="text-lg text-gray-600 italic mb-2">{selectedCity.nativeName}</Text>
+        <Text className="text-base text-gray-700 mb-1">Currency: {selectedCity.currency}</Text>
+        <Text className="text-base text-gray-700 mb-4">Language: {selectedCity.language}</Text>
 
-      {isLoading && <Loader message="Loading places..." />}
+        {isLoading && <Loader message="Loading places..." />}
 
-      {error && (
-        <ErrorMessageProps
+        {error && (
+        <Retry
         message={error}
         onRetry={() => fetchPlaces(selectedCity.key)}
-      />
-      )}
+        />
+        )}
 
-      {places.length > 0 && (
+        {showEmptyState && (
+        <Retry
+            message="No cities available"
+            onRetry={() => fetchPlaces(selectedCity.key)}
+        />
+        )}
+
+        {!isLoading && !error && places.length > 0 && (
         <PlaceList places={places} />
-      )}
+        )}
     </ScrollView>
   );
 };

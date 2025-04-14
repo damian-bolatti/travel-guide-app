@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-interface ErrorMessageProps {
+interface RetryProps {
   message: string;
   onRetry: () => void;
 }
 
-const ErrorMessage = ({
+const Retry = ({
   message,
   onRetry,
-}: ErrorMessageProps) => {
+}: RetryProps) => {
   return (
     <View className="flex-1 justify-center items-center">
       <Text className="text-base text-gray-700 text-center mb-4">{message}</Text>
@@ -24,4 +24,4 @@ const ErrorMessage = ({
   );
 };
 
-export default ErrorMessage;
+export default Retry;
