@@ -1,4 +1,4 @@
-import { useCities } from '@/core/interface/hooks/useCities';
+import { useCities } from '@/interface/hooks/useCities';
 import CityList from '@/interface/components/CityList';
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';

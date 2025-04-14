@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react';
 import { City } from '@/core/domain/entities/City';
-import { useCitiesStore } from '../store/useCitiesStore';
+import { useCitiesStore } from '../../core/interface/store/useCitiesStore';
 
 export const useCities = () => {
   const {
