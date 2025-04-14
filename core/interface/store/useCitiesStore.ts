@@ -11,6 +11,7 @@ interface CitiesState {
   error: string | null;
   fetchCities: () => Promise<void>;
   setSelectedCity: (city: City) => void;
+  reset: () => void;
 }
 
 export const useCitiesStore = create<CitiesState>((set) => {
@@ -22,7 +23,7 @@ export const useCitiesStore = create<CitiesState>((set) => {
     selectedCity: null,
     isLoading: false,
     error: null,
-    
+
     fetchCities: async () => {
       set({ isLoading: true, error: null });
 
@@ -30,9 +31,24 @@ export const useCitiesStore = create<CitiesState>((set) => {
         const cities = await getAllCities.execute();
         set({ cities, isLoading: false });
       } catch (err: any) {
-        set({ error: err.message || 'Error fetching cities', isLoading: false });
+        set({
+          error: err.message || 'Error fetching cities',
+          isLoading: false,
+        });
       }
     },
-    setSelectedCity: (city) => set({ selectedCity: city }),
+
+    setSelectedCity: (city) => {
+      set({ selectedCity: city });
+    },
+
+    reset: () => {
+      set({
+        cities: [],
+        selectedCity: null,
+        error: null,
+        isLoading: false,
+      });
+    },
   };
 });

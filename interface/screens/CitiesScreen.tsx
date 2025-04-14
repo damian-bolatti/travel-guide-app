@@ -1,14 +1,10 @@
-import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { useCities } from '@/core/interface/hooks/useCities';
 import CityList from '@/interface/components/CityList';
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 
 const CitiesScreen = () => {
-  const { cities, isLoading, error, fetchCities } = useCitiesStore();
-
-  useEffect(() => {
-    fetchCities();
-  }, []);
+    const { cities, isLoading, error } = useCities();
 
   return (
     <View className="flex-1 bg-gray-100 px-4 py-6">
