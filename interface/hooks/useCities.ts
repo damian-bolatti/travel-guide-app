@@ -31,5 +31,6 @@ export const useCities = () => {
     selectedCity,
     selectCity,
     reset,
+    fetchCities
   };
 };
