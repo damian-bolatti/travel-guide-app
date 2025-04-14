@@ -1,21 +1,31 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { City } from '@/core/domain/entities/City';
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { useRouter } from 'expo-router';
+import React from 'react';
+import { View, Text, Pressable } from 'react-native';
 
 interface CityCardProps {
-    id: number,
-    key: string,
-    name: string,
-    nativeName: string,
-    currency: string,
-    language: string,
+  city: City;
 }
 
-const CityCard = (city : CityCardProps) => {
+const CityCard = ({ city }: CityCardProps) => {
+  const router = useRouter();
+  const setSelectedCity = useCitiesStore((state) => state.setSelectedCity);
+  const handlePress = () => {
+    setSelectedCity(city);
+    router.push('/cities/cityDetails');
+  };
+
   return (
-    <View>
-      <Text>{ city.name }</Text>
-    </View>
-  )
-}
+    <Pressable onPress={handlePress} className="bg-white p-4 rounded-2xl shadow mb-3">
+      <Text className="text-xl font-semibold text-gray-900">{city.name}</Text>
+      <Text className="text-sm text-gray-500 italic">{city.nativeName}</Text>
+      <View className="flex-row justify-between mt-2">
+        <Text className="text-xs text-gray-700">Currency: {city.currency}</Text>
+        <Text className="text-xs text-gray-700">Lang: {city.language}</Text>
+      </View>
+    </Pressable>
+  );
+};
 
-export default CityCard
+export default CityCard;

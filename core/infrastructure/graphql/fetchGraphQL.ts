@@ -20,8 +20,6 @@ export const fetchGraphQL = async (
       },
       body: JSON.stringify({ query, variables }),
     });
-
-    console.log('GraphQL Response:', JSON.stringify(res));
   
     const json = await res.json();
   

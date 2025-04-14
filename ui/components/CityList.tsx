@@ -14,8 +14,7 @@ const CityList = ({ cities }: CityListProps) => {
       keyExtractor={(item) => item.key}
       renderItem={({ item }) => (
         <CityCard
-          {...item}
-        />
+        city={item}/>
       )}
     />
   );
