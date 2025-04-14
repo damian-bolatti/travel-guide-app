@@ -11,7 +11,7 @@ const CitiesScreen = () => {
     const showEmptyState = !isLoading && !error && cities.length === 0;
 
   return (
-    <View className="flex-1 bg-gray-100 px-4 py-6">
+    <View className="flex-1 px-4 bg-white">
         {isLoading && (
         <Loader message="Loading cities..." />
         )}

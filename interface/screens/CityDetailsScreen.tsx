@@ -37,7 +37,6 @@ useEffect(() => {
 
   return (
     <ScrollView className="flex-1 bg-white p-6">
-        <Text className="text-3xl font-bold mb-2">{selectedCity.name}</Text>
         <Text className="text-lg text-gray-600 italic mb-2">{selectedCity.nativeName}</Text>
         <Text className="text-base text-gray-700 mb-1">Currency: {selectedCity.currency}</Text>
         <Text className="text-base text-gray-700 mb-4">Language: {selectedCity.language}</Text>

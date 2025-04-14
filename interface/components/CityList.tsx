@@ -12,6 +12,7 @@ const CityList = ({ cities }: CityListProps) => {
     <FlatList
       data={cities}
       keyExtractor={(item) => item.key}
+      showsVerticalScrollIndicator={false}
       renderItem={({ item }) => (
         <CityCard
         city={item}/>

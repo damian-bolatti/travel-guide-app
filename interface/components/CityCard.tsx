@@ -17,12 +17,12 @@ const CityCard = ({ city }: CityCardProps) => {
   };
 
   return (
-    <Pressable onPress={handlePress} className="bg-white p-4 rounded-2xl shadow mb-3">
-      <Text className="text-xl font-semibold text-gray-900">{city.name}</Text>
-      <Text className="text-sm text-gray-500 italic">{city.nativeName}</Text>
-      <View className="flex-row justify-between mt-2">
-        <Text className="text-xs text-gray-700">Currency: {city.currency}</Text>
-        <Text className="text-xs text-gray-700">Lang: {city.language}</Text>
+    <Pressable onPress={handlePress} className="bg-slate-50 p-4 rounded-sm mb-3">
+      <Text className="text-2xl font-work-bold text-gray-900">{city.name}</Text>
+      <Text className="text-xl font-work-medium text-gray-500 italic">{city.nativeName}</Text>
+      <View className="flex-row font-work-light justify-between mt-2">
+        <Text className="text-sm text-gray-700 font-work-light">Currency: {city.currency}</Text>
+        <Text className="text-sm text-gray-700 font-work-light">Lang: {city.language}</Text>
       </View>
     </Pressable>
   );

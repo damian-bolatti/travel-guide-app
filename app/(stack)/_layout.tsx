@@ -9,6 +9,11 @@ const StackLayout = () => {
         options={{
           title: 'Cities',
           headerTitleAlign: 'center',
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            fontFamily: 'WorkSans-Bold',
+            fontSize: 22,
+          },
         }}
       />
       <Stack.Screen
@@ -16,6 +21,11 @@ const StackLayout = () => {
         options={{
           title: 'Details',
           headerTitleAlign: 'center',
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            fontFamily: 'WorkSans-Bold',
+            fontSize: 22,
+          },
         }}
       />
     </Stack>
