@@ -1,6 +1,6 @@
+const colors = require('./interface/theme/colors').default
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // NOTE: Update this to include the paths to all of your component files.
   content: [
     "./App.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -17,8 +17,8 @@ module.exports = {
         "work-medium": ["WorkSans-Medium", "sans-serif"],
         "work-regular": ["WorkSans-Regular", "sans-serif"],
       },
+      colors,
     },
   },
   plugins: [],
 }
-

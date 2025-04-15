@@ -17,24 +17,30 @@ export const SettingsScreen = () => {
   };
 
   return (
-    <View className="flex-1 bg-white dark:bg-black px-4 pt-4 justify-between">
+    <View className="flex-1 bg-background dark:bg-background-dark px-4 pt-4 justify-between">
       <View>
         {/* Dark Mode */}
         <View className="flex-row justify-between items-center py-4">
-          <Text className="text-xl text-gray-700 dark:text-gray-300 font-work-medium">Dark Mode</Text>
+          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
+            Dark Mode
+          </Text>
           <Switch value={isDark} onValueChange={toggleTheme} />
         </View>
 
-        {/* Language (a futuro, solo visual) */}
+        {/* Language (visual) */}
         <View className="flex-row justify-between items-center py-4">
-          <Text className="text-xl text-gray-700 dark:text-gray-300 font-work-medium">Language</Text>
-          <Text className="text-xl text-gray-700 dark:text-gray-300 font-work-medium">English</Text>
+          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
+            Language
+          </Text>
+          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
+            English
+          </Text>
         </View>
       </View>
 
       {/* App Version */}
       <View className="items-center pb-6">
-        <Text className="text-base text-gray-400 dark:text-gray-500 font-work-regular">
+        <Text className="text-base text-icon dark:text-icon-dark font-work-regular">
           App Version 0.1.0
         </Text>
       </View>

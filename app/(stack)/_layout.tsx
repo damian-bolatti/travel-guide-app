@@ -1,47 +1,36 @@
-import React from 'react'
-import { Stack } from 'expo-router'
+import React from 'react';
+import { Stack } from 'expo-router';
+import { useThemeStore } from '@/interface/theme/useThemeStore';
+import colors from '@/interface/theme/colors';
 
 const StackLayout = () => {
-  return (
-    <Stack>
-      <Stack.Screen
-        name="cities/index"
-        options={{
-          title: 'Travel Guide App',
-          headerTitleAlign: 'center',
-          headerShadowVisible: false,
-          headerTitleStyle: {
-            fontFamily: 'WorkSans-Bold',
-            fontSize: 22,
-          },
-        }}
-      />
-      <Stack.Screen
-        name="cities/cityDetails"
-        options={{
-          title: 'City',
-          headerTitleAlign: 'center',
-          headerShadowVisible: false,
-          headerTitleStyle: {
-            fontFamily: 'WorkSans-Bold',
-            fontSize: 22,
-          },
-        }}
-      />
-      <Stack.Screen
-        name="settings/index"
-        options={{
-          title: 'Settings',
-          headerTitleAlign: 'center',
-          headerShadowVisible: false,
-          headerTitleStyle: {
-            fontFamily: 'WorkSans-Bold',
-            fontSize: 22,
-          },
-        }}
-      />
-    </Stack>
-    )  
-}
+  const { theme } = useThemeStore();
+  const isDark = theme === 'dark';
 
-export default StackLayout
+  const backgroundColor = isDark ? colors['background-dark'] : colors.background;
+  const textColor = isDark ? colors['text-header-dark'] : colors['text-header'];
+
+  return (
+    <Stack
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerShadowVisible: false,
+        headerStyle: {
+          backgroundColor,
+        },
+        headerTintColor: textColor,
+        headerTitleStyle: {
+          fontFamily: 'WorkSans-Bold',
+          fontSize: 22,
+          color: textColor,
+        },
+      }}
+    >
+      <Stack.Screen name="cities/index" options={{ title: 'Travel Guide App' }} />
+      <Stack.Screen name="cities/cityDetails" options={{ title: 'City' }} />
+      <Stack.Screen name="settings/index" options={{ title: 'Settings' }} />
+    </Stack>
+  );
+};
+
+export default StackLayout;
