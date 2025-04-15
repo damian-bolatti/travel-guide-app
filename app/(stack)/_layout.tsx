@@ -28,6 +28,18 @@ const StackLayout = () => {
           },
         }}
       />
+      <Stack.Screen
+        name="settings/index"
+        options={{
+          title: 'Settings',
+          headerTitleAlign: 'center',
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            fontFamily: 'WorkSans-Bold',
+            fontSize: 22,
+          },
+        }}
+      />
     </Stack>
     )  
 }

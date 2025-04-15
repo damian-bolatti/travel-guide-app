@@ -1,14 +1,29 @@
 import { useCities } from '@/interface/hooks/useCities';
 import CityList from '@/interface/components/CityList';
-import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect, useLayoutEffect } from 'react';
+import { View, Pressable } from 'react-native';
 import Loader from '../shared/Loader';
 import Retry from '../shared/Retry';
+import { useNavigation } from 'expo-router';
+import { Icon } from '../shared/Icon';
 
 const CitiesScreen = () => {
     const { cities, isLoading, error, fetchCities, reset } = useCities();
+    const navigation = useNavigation();
 
     const showEmptyState = !isLoading && !error && cities.length === 0;
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerLeft: () => (
+            <Pressable
+              onPress={() => navigation.navigate('settings/index' as never)}
+            >
+              <Icon name="Settings" color="black" />
+            </Pressable>
+          ),
+        });
+      }, [navigation]);
 
     useEffect(() => {
         return () => {
