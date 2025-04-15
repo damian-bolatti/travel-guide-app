@@ -9,7 +9,7 @@ const Loader = ({ message } : LoaderProps) => {
   return (
     <View className="flex-1 justify-center items-center">
       <ActivityIndicator size="large" className="mb-4" />
-      <Text className="text-base text-gray-700 text-center">{message}</Text>
+      <Text className="text-base text-gray-500 font-work-light text-center">{message}</Text>
     </View>
   );
 };

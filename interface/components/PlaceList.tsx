@@ -12,7 +12,7 @@ const PlaceList = ({ places }: PlaceListProps) => {
 
   return (
     <View className="mt-4">
-      <Text className="text-lg font-semibold mb-2">Places</Text>
+      <Text className="text-xl font-work-bold text-gray-800 mb-2">Places to visit:</Text>
 
       {places.map((place, idx) => (
         <PlaceCard key={idx} place={place} />
