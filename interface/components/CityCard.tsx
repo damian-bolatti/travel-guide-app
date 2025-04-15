@@ -29,7 +29,7 @@ const CityCard = ({ city }: CityCardProps) => {
             <Text className="text-2xl font-work-bold text-text-header dark:text-text-header-dark mr-2">
               {city.name}
             </Text>
-            <Text className="text-xl font-work-medium text-icon dark:text-icon-dark italic">
+            <Text className="text-xl font-work-medium text-text dark:text-text-dark italic">
               ({city.nativeName})
             </Text>
           </View>

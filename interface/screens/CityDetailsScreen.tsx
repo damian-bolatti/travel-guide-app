@@ -36,7 +36,7 @@ const CityDetailsScreen = () => {
 
   return (
     <ScrollView className="flex-1 px-4 bg-background dark:bg-background-dark">
-      <Text className="text-2xl font-work-medium text-icon dark:text-icon-dark italic mb-1">
+      <Text className="text-2xl font-work-medium text-text dark:text-text-dark italic mb-1">
         ({selectedCity.nativeName})
       </Text>
       <Text className="text-base text-text dark:text-text-dark font-work-light mb-1">
