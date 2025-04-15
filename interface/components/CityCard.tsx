@@ -31,7 +31,7 @@ const CityCard = ({ city }: CityCardProps) => {
       </View>
     </View>
 
-    <Icon name="ChevronRight" color="#9ca3af" />
+    <Icon name="ChevronRight"/>
   </View>
 </Pressable>
 

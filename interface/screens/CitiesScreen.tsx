@@ -8,52 +8,48 @@ import { useNavigation } from 'expo-router';
 import { Icon } from '../shared/Icon';
 
 const CitiesScreen = () => {
-    const { cities, isLoading, error, fetchCities, reset } = useCities();
-    const navigation = useNavigation();
+  const { cities, isLoading, error, fetchCities, reset } = useCities();
+  const navigation = useNavigation();
 
-    const showEmptyState = !isLoading && !error && cities.length === 0;
+  const showEmptyState = !isLoading && !error && cities.length === 0;
 
-    useLayoutEffect(() => {
-        navigation.setOptions({
-          headerLeft: () => (
-            <Pressable
-              onPress={() => navigation.navigate('settings/index' as never)}
-            >
-              <Icon name="Settings" color="black" />
-            </Pressable>
-          ),
-        });
-      }, [navigation]);
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Pressable onPress={() => navigation.navigate('settings/index' as never)} className="pl-2">
+          <Icon name="Settings"/>
+        </Pressable>
+      ),
+    });
+  }, [navigation]);
 
-    useEffect(() => {
-        return () => {
-          reset();
-        };
-      }, []);
+  useEffect(() => {
+    return () => {
+      reset();
+    };
+  }, []);
 
   return (
-    <View className="flex-1 px-4 bg-white">
-        {isLoading && (
-        <Loader message="Loading cities..." />
-        )}
+    <View className="flex-1 px-4 bg-background dark:bg-background-dark">
+      {isLoading && <Loader message="Loading cities..." />}
 
-        {error && (
+      {error && (
         <Retry
-        message={error}
-        onRetry={fetchCities}
+          message={error}
+          onRetry={fetchCities}
         />
-        )}
+      )}
 
-        {showEmptyState && (
+      {showEmptyState && (
         <Retry
-            message="No cities available"
-            onRetry={fetchCities}
+          message="No cities available"
+          onRetry={fetchCities}
         />
-        )}
+      )}
 
-        {!isLoading && !error && cities.length > 0 && (
+      {!isLoading && !error && cities.length > 0 && (
         <CityList cities={cities} />
-        )}
+      )}
     </View>
   );
 };
