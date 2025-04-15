@@ -7,7 +7,6 @@ import PlaceList from '../components/PlaceList';
 import Retry from '../shared/Retry';
 import { useNavigation } from '@react-navigation/native';
 
-
 const CityDetailsScreen = () => {
   const navigation = useNavigation();
   const { selectedCity } = useCities();
@@ -21,7 +20,7 @@ const CityDetailsScreen = () => {
     }
   }, [navigation, selectedCity]);
 
-useEffect(() => {
+  useEffect(() => {
     return () => {
       reset();
     };
@@ -29,37 +28,43 @@ useEffect(() => {
 
   if (!selectedCity) {
     return (
-      <View className="flex-1 justify-center items-center bg-white">
-        <Text className="text-red-600">City not found</Text>
+      <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark">
+        <Text className="text-icon dark:text-icon-dark">City not found</Text>
       </View>
     );
   }
 
   return (
-    <ScrollView className="flex-1 px-4 bg-white">
-        <Text className="text-2xl font-work-medium text-gray-400 italic mb-1">({selectedCity.nativeName})</Text>
-        <Text className="text-base text-gray-700 font-work-light mb-1">Currency: {selectedCity.currency}</Text>
-        <Text className="text-base text-gray-700 font-work-light mb-4">Language: {selectedCity.language}</Text>
+    <ScrollView className="flex-1 px-4 bg-background dark:bg-background-dark">
+      <Text className="text-2xl font-work-medium text-icon dark:text-icon-dark italic mb-1">
+        ({selectedCity.nativeName})
+      </Text>
+      <Text className="text-base text-text dark:text-text-dark font-work-light mb-1">
+        Currency: {selectedCity.currency}
+      </Text>
+      <Text className="text-base text-text dark:text-text-dark font-work-light mb-4">
+        Language: {selectedCity.language}
+      </Text>
 
-        {isLoading && <Loader message="Loading places..." />}
+      {isLoading && <Loader message="Loading places..." />}
 
-        {error && (
+      {error && (
         <Retry
-        message={error}
-        onRetry={() => fetchPlaces(selectedCity.key)}
+          message={error}
+          onRetry={() => fetchPlaces(selectedCity.key)}
         />
-        )}
+      )}
 
-        {showEmptyState && (
+      {showEmptyState && (
         <Retry
-            message="No cities available"
-            onRetry={() => fetchPlaces(selectedCity.key)}
+          message="No cities available"
+          onRetry={() => fetchPlaces(selectedCity.key)}
         />
-        )}
+      )}
 
-        {!isLoading && !error && places.length > 0 && (
+      {!isLoading && !error && places.length > 0 && (
         <PlaceList places={places} />
-        )}
+      )}
     </ScrollView>
   );
 };

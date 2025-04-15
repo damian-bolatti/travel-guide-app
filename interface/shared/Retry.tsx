@@ -6,19 +6,20 @@ interface RetryProps {
   onRetry: () => void;
 }
 
-const Retry = ({
-  message,
-  onRetry,
-}: RetryProps) => {
+const Retry = ({ message, onRetry }: RetryProps) => {
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text className="text-base text-gray-700 text-center mb-4">{message}</Text>
+    <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark px-4">
+      <Text className="text-base text-text dark:text-text-dark text-center mb-4 font-work-light">
+        {message}
+      </Text>
 
       <TouchableOpacity
         onPress={onRetry}
-        className="bg-blue-600 px-5 py-2 rounded-md"
+        className="bg-tint dark:bg-tint-dark px-5 py-2 rounded-sm"
       >
-        <Text className="text-white font-semibold">Retry</Text>
+        <Text className="text-background dark:text-background-dark font-work-medium">
+          Retry
+        </Text>
       </TouchableOpacity>
     </View>
   );
