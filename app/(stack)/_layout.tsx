@@ -15,6 +15,7 @@ const StackLayout = () => {
   return (
     <Stack
       screenOptions={{
+        animation: "slide_from_right",
         headerTitleAlign: "center",
         headerShadowVisible: false,
         headerStyle: {
