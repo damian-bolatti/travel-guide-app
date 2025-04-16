@@ -1,6 +1,6 @@
 import { useCities } from '@/interface/hooks/useCities';
 import CityList from '@/interface/components/CityList';
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Pressable } from 'react-native';
 import Loader from '../shared/Loader';
 import Retry from '../shared/Retry';
@@ -25,11 +25,6 @@ const CitiesScreen = () => {
     });
   }, [navigation]);
 
-  useEffect(() => {
-    return () => {
-      reset();
-    };
-  }, []);
 
   return (
     <View className="flex-1 px-4 bg-background dark:bg-background-dark" testID="cities-screen">
