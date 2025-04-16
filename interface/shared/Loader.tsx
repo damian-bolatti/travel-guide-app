@@ -7,9 +7,15 @@ interface LoaderProps {
 
 const Loader = ({ message }: LoaderProps) => {
   return (
-    <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark">
-      <ActivityIndicator size="large" className="mb-4" />
-      <Text className="text-base text-icon dark:text-icon-dark font-work-light text-center">
+    <View
+      testID="loader-wrapper"
+      className="flex-1 justify-center items-center bg-background dark:bg-background-dark"
+    >
+      <ActivityIndicator testID="loader-spinner" size="large" className="mb-4" />
+      <Text
+        testID="loader-message"
+        className="text-base text-icon dark:text-icon-dark font-work-light text-center"
+      >
         {message}
       </Text>
     </View>

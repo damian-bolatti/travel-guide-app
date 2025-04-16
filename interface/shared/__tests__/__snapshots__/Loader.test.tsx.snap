@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader matches snapshot 1`] = `
+<View
+  className="flex-1 justify-center items-center bg-background dark:bg-background-dark"
+  testID="loader-wrapper"
+>
+  <ActivityIndicator
+    className="mb-4"
+    size="large"
+    testID="loader-spinner"
+  />
+  <Text
+    className="text-base text-icon dark:text-icon-dark font-work-light text-center"
+    testID="loader-message"
+  >
+    Please wait...
+  </Text>
+</View>
+`;

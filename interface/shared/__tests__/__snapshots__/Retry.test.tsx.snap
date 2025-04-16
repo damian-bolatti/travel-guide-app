@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Retry matches snapshot 1`] = `
+<View
+  className="flex-1 justify-center items-center bg-background dark:bg-background-dark px-4"
+  testID="retry-wrapper"
+>
+  <Text
+    className="text-base text-text dark:text-text-dark text-center mb-4 font-work-light"
+    testID="retry-message"
+  >
+    Please try again
+  </Text>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "opacity": 1,
+      }
+    }
+    testID="retry-button"
+  >
+    <Text
+      className="text-background dark:text-background-dark font-work-medium"
+      testID="retry-button-label"
+    >
+      Retry
+    </Text>
+  </View>
+</View>
+`;
