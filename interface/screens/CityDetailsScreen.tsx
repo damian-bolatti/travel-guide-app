@@ -1,11 +1,11 @@
-import React, { useEffect, useLayoutEffect } from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { usePlaces } from '../hooks/usePlaces';
-import { useCities } from '../hooks/useCities';
-import Loader from '../shared/Loader';
-import PlaceList from '../components/PlaceList';
-import Retry from '../shared/Retry';
-import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useLayoutEffect } from "react";
+import { View, Text, ScrollView } from "react-native";
+import { usePlaces } from "../hooks/usePlaces";
+import { useCities } from "../hooks/useCities";
+import Loader from "../shared/Loader";
+import PlaceList from "../components/PlaceList";
+import Retry from "../shared/Retry";
+import { useNavigation } from "@react-navigation/native";
 
 const CityDetailsScreen = () => {
   const navigation = useNavigation();
@@ -67,10 +67,7 @@ const CityDetailsScreen = () => {
       {isLoading && <Loader message="Loading places..." />}
 
       {error && (
-        <Retry
-          message={error}
-          onRetry={() => fetchPlaces(selectedCity.key)}
-        />
+        <Retry message={error} onRetry={() => fetchPlaces(selectedCity.key)} />
       )}
 
       {showEmptyState && (
@@ -80,9 +77,7 @@ const CityDetailsScreen = () => {
         />
       )}
 
-      {canShowPlaces && (
-        <PlaceList places={places} />
-      )}
+      {canShowPlaces && <PlaceList places={places} />}
     </ScrollView>
   );
 };

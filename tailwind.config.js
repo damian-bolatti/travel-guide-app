@@ -1,4 +1,4 @@
-const colors = require('./interface/theme/colors').default
+const colors = require("./interface/theme/colors").default;
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,7 +8,7 @@ module.exports = {
     "./shared/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [require("nativewind/preset")],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -21,4 +21,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

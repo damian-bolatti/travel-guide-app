@@ -1,10 +1,10 @@
-import { renderHook, act } from '@testing-library/react-native';
-import { useCities } from '../useCities';
-import { City } from '@/core/domain/entities/City';
+import { renderHook, act } from "@testing-library/react-native";
+import { useCities } from "../useCities";
+import { City } from "@/core/domain/entities/City";
 
-import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { useCitiesStore } from "@/core/interface/store/useCitiesStore";
 
-jest.mock('@/core/interface/store/useCitiesStore', () => ({
+jest.mock("@/core/interface/store/useCitiesStore", () => ({
   useCitiesStore: jest.fn(),
 }));
 
@@ -12,14 +12,14 @@ const mockedUseCitiesStore = useCitiesStore as unknown as jest.Mock;
 
 const mockCity: City = {
   id: 1,
-  key: 'paris',
-  name: 'Paris',
-  nativeName: 'Paris',
-  currency: 'EUR',
-  language: 'fr',
+  key: "paris",
+  name: "Paris",
+  nativeName: "Paris",
+  currency: "EUR",
+  language: "fr",
 };
 
-describe('useCities', () => {
+describe("useCities", () => {
   const fetchCities = jest.fn();
   const setSelectedCity = jest.fn();
   const reset = jest.fn();
@@ -47,7 +47,7 @@ describe('useCities', () => {
     });
   });
 
-  it('calls fetchCities on mount when cities are empty', () => {
+  it("calls fetchCities on mount when cities are empty", () => {
     mockedUseCitiesStore.mockImplementation(() => ({
       cities: [],
       isLoading: false,
@@ -62,13 +62,13 @@ describe('useCities', () => {
     expect(fetchCities).toHaveBeenCalled();
   });
 
-  it('does NOT call fetchCities on mount when cities are already loaded', () => {
+  it("does NOT call fetchCities on mount when cities are already loaded", () => {
     renderHook(() => useCities());
 
     expect(fetchCities).not.toHaveBeenCalled();
   });
 
-  it('does NOT call fetchCities on mount when loading or error is present', () => {
+  it("does NOT call fetchCities on mount when loading or error is present", () => {
     mockedUseCitiesStore.mockImplementation(() => ({
       cities: [],
       isLoading: true,
@@ -84,7 +84,7 @@ describe('useCities', () => {
     mockedUseCitiesStore.mockImplementation(() => ({
       cities: [],
       isLoading: false,
-      error: 'Network error',
+      error: "Network error",
       selectedCity: null,
       fetchCities,
       setSelectedCity,
@@ -94,7 +94,7 @@ describe('useCities', () => {
     expect(fetchCities).not.toHaveBeenCalled();
   });
 
-  it('returns correct values from store', () => {
+  it("returns correct values from store", () => {
     const { result } = renderHook(() => useCities());
 
     expect(result.current.cities).toEqual([mockCity]);
@@ -104,7 +104,7 @@ describe('useCities', () => {
     expect(result.current.fetchCities).toBe(fetchCities);
   });
 
-  it('calls setSelectedCity with correct city', () => {
+  it("calls setSelectedCity with correct city", () => {
     const { result } = renderHook(() => useCities());
 
     act(() => {
@@ -114,7 +114,7 @@ describe('useCities', () => {
     expect(setSelectedCity).toHaveBeenCalledWith(mockCity);
   });
 
-  it('calls reset from Zustand store', () => {
+  it("calls reset from Zustand store", () => {
     const { result } = renderHook(() => useCities());
 
     act(() => {

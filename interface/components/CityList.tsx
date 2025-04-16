@@ -1,7 +1,7 @@
-import React from 'react';
-import { FlatList } from 'react-native';
-import CityCard from './CityCard';
-import { City } from '@/core/domain/entities/City';
+import React from "react";
+import { FlatList } from "react-native";
+import CityCard from "./CityCard";
+import { City } from "@/core/domain/entities/City";
 
 interface CityListProps {
   cities: City[];
@@ -13,10 +13,7 @@ const CityList = ({ cities }: CityListProps) => {
       data={cities}
       keyExtractor={(item) => item.key}
       showsVerticalScrollIndicator={false}
-      renderItem={({ item }) => (
-        <CityCard
-        city={item}/>
-      )}
+      renderItem={({ item }) => <CityCard city={item} />}
     />
   );
 };

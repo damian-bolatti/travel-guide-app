@@ -1,7 +1,7 @@
-import { PlaceRepository } from '@/core/domain/repositories/PlaceRepository';
-import { fetchGraphQL } from '@/core/infrastructure/graphql/fetchGraphQL';
-import { Place } from '@/core/domain/entities/Place';
-import { mapPlaceFromDTO } from '@/core/domain/mappers/place.mapper';
+import { PlaceRepository } from "@/core/domain/repositories/PlaceRepository";
+import { fetchGraphQL } from "@/core/infrastructure/graphql/fetchGraphQL";
+import { Place } from "@/core/domain/entities/Place";
+import { mapPlaceFromDTO } from "@/core/domain/mappers/place.mapper";
 
 export class PlaceRepositoryImpl implements PlaceRepository {
   async getByCityKey(key: string): Promise<Place[]> {

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Switch } from 'react-native';
-import { useThemeStore } from '@/interface/theme/useThemeStore';
+import React, { useEffect, useState } from "react";
+import { View, Text, Switch } from "react-native";
+import { useThemeStore } from "@/interface/theme/useThemeStore";
 
 export const SettingsScreen = () => {
   const { theme, setTheme } = useThemeStore();
-  const [isDark, setIsDark] = useState(theme === 'dark');
+  const [isDark, setIsDark] = useState(theme === "dark");
 
   useEffect(() => {
-    setIsDark(theme === 'dark');
+    setIsDark(theme === "dark");
   }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = isDark ? 'light' : 'dark';
+    const newTheme = isDark ? "light" : "dark";
     setTheme(newTheme);
     setIsDark(!isDark);
   };

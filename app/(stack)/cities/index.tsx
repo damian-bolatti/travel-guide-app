@@ -1,3 +1,3 @@
-import CitiesScreen from '@/interface/screens/CitiesScreen';
+import CitiesScreen from "@/interface/screens/CitiesScreen";
 
 export default CitiesScreen;

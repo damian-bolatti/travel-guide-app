@@ -1,10 +1,10 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Place } from '@/core/domain/entities/Place';
-import PlaceCard from './PlaceCard';
+import React from "react";
+import { View, Text } from "react-native";
+import { Place } from "@/core/domain/entities/Place";
+import PlaceCard from "./PlaceCard";
 
 interface PlaceListProps {
-  places: Place[]; 
+  places: Place[];
 }
 
 const PlaceList = ({ places }: PlaceListProps) => {

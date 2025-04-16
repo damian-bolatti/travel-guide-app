@@ -1,5 +1,5 @@
-import { Place } from '../entities/Place';
-import { PlaceRepository } from '../repositories/PlaceRepository';
+import { Place } from "../entities/Place";
+import { PlaceRepository } from "../repositories/PlaceRepository";
 
 export class GetPlacesByCityKey {
   constructor(private readonly repository: PlaceRepository) {}
