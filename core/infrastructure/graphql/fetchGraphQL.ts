@@ -1,6 +1,7 @@
 import NetInfo from '@react-native-community/netinfo';
 import { Platform } from 'react-native';
 import axios from 'axios';
+import { handleHTTPError } from '../../utils/errorHandler';
 
 export const fetchGraphQL = async (
   query: string,
@@ -17,7 +18,6 @@ export const fetchGraphQL = async (
 
   const TIMEOUT_MS = Number(process.env.EXPO_PUBLIC_GRAPHQL_TIMEOUT) || 5000;
 
-  // Verificar conexión antes de lanzar la request
   const netState = await NetInfo.fetch();
   if (!netState.isConnected) {
     throw new Error('No internet connection');
@@ -51,7 +51,9 @@ export const fetchGraphQL = async (
         throw new Error('Network error');
       }
 
-      throw new Error(`GraphQL error: ${error.message}`);
+      const statusCode = error.response.status;
+      const message = handleHTTPError(statusCode);
+      throw new Error(message);
     }
 
     throw error;
