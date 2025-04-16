@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SettingsScreen renders with light theme and matches snapshot 1`] = `
+<View
+  className="flex-1 bg-background dark:bg-background-dark px-4 pt-4 justify-between"
+  testID="settings-wrapper"
+>
+  <View>
+    <View
+      className="flex-row justify-between items-center py-4"
+      testID="settings-toggle-row"
+    >
+      <Text
+        className="text-xl text-text-header dark:text-text-header-dark font-work-medium"
+        testID="settings-label"
+      >
+        Dark Mode
+      </Text>
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        testID="settings-switch"
+        value={false}
+      />
+    </View>
+  </View>
+  <View
+    className="items-center pb-6"
+  >
+    <Text
+      className="text-base text-icon dark:text-icon-dark font-work-regular"
+      testID="settings-version"
+    >
+      App Version 0.1.0
+    </Text>
+  </View>
+</View>
+`;

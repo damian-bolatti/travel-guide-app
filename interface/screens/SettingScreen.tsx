@@ -17,30 +17,34 @@ export const SettingsScreen = () => {
   };
 
   return (
-    <View className="flex-1 bg-background dark:bg-background-dark px-4 pt-4 justify-between">
+    <View
+      className="flex-1 bg-background dark:bg-background-dark px-4 pt-4 justify-between"
+      testID="settings-wrapper"
+    >
       <View>
-        {/* Dark Mode */}
-        <View className="flex-row justify-between items-center py-4">
-          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
+        <View
+          className="flex-row justify-between items-center py-4"
+          testID="settings-toggle-row"
+        >
+          <Text
+            className="text-xl text-text-header dark:text-text-header-dark font-work-medium"
+            testID="settings-label"
+          >
             Dark Mode
           </Text>
-          <Switch value={isDark} onValueChange={toggleTheme} />
-        </View>
-
-        {/* Language (visual) */}
-        <View className="flex-row justify-between items-center py-4">
-          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
-            Language
-          </Text>
-          <Text className="text-xl text-text-header dark:text-text-header-dark font-work-medium">
-            English
-          </Text>
+          <Switch
+            value={isDark}
+            onValueChange={toggleTheme}
+            testID="settings-switch"
+          />
         </View>
       </View>
 
-      {/* App Version */}
       <View className="items-center pb-6">
-        <Text className="text-base text-icon dark:text-icon-dark font-work-regular">
+        <Text
+          className="text-base text-icon dark:text-icon-dark font-work-regular"
+          testID="settings-version"
+        >
           App Version 0.1.0
         </Text>
       </View>
