@@ -2,11 +2,11 @@ import { renderHook, act } from '@testing-library/react-native';
 import { useCities } from '../useCities';
 import { City } from '@/core/domain/entities/City';
 
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+
 jest.mock('@/core/interface/store/useCitiesStore', () => ({
   useCitiesStore: jest.fn(),
 }));
-
-import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
 
 const mockedUseCitiesStore = useCitiesStore as unknown as jest.Mock;
 

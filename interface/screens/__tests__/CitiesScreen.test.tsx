@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import CitiesScreen from '../CitiesScreen';
 
+import { useCities } from '../../hooks/useCities';
+
 jest.mock('expo-router', () => ({
   useNavigation: () => ({
     navigate: jest.fn(),
@@ -39,8 +41,6 @@ jest.mock('../../components/CityList', () => {
     </View>
   );
 });
-
-import { useCities } from '../../hooks/useCities';
 
 describe('CitiesScreen', () => {
   beforeEach(() => {

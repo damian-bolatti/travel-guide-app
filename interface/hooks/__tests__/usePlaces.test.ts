@@ -3,6 +3,9 @@ import { usePlaces } from '../usePlaces';
 import { City } from '@/core/domain/entities/City';
 import { Place } from '@/core/domain/entities/Place';
 
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
+
 jest.mock('@/core/interface/store/useCitiesStore', () => ({
   useCitiesStore: jest.fn(),
 }));
@@ -10,9 +13,6 @@ jest.mock('@/core/interface/store/useCitiesStore', () => ({
 jest.mock('@/core/interface/store/usePlacesStore', () => ({
   usePlacesStore: jest.fn(),
 }));
-
-import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
-import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
 
 const mockedUseCitiesStore = useCitiesStore as unknown as jest.Mock;
 const mockedUsePlacesStore = usePlacesStore as unknown as jest.Mock;

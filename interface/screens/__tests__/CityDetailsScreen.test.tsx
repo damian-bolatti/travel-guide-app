@@ -2,6 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import CityDetailsScreen from '../CityDetailsScreen';
 
+import { useCities } from '../../hooks/useCities';
+import { usePlaces } from '../../hooks/usePlaces';
+
 jest.mock('@react-navigation/native', () => ({
   useNavigation: () => ({
     setOptions: jest.fn(),
@@ -34,9 +37,6 @@ jest.mock('../../components/PlaceList', () => {
     <Text testID="place-list">{places.length} places</Text>
   );
 });
-
-import { useCities } from '../../hooks/useCities';
-import { usePlaces } from '../../hooks/usePlaces';
 
 const mockCity = {
   id: 1,

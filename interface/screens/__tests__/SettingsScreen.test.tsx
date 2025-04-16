@@ -2,11 +2,11 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { SettingsScreen } from '../SettingScreen';
 
+import { useThemeStore } from '@/interface/theme/useThemeStore';
+
 jest.mock('@/interface/theme/useThemeStore', () => ({
   useThemeStore: jest.fn(),
 }));
-
-import { useThemeStore } from '@/interface/theme/useThemeStore';
 
 const mockedUseThemeStore = useThemeStore as unknown as jest.Mock;
 
