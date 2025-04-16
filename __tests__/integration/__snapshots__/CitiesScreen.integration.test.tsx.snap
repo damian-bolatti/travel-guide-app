@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CitiesScreen (mocked repository) renders cities and handles selection 1`] = `
+<View
+  className="flex-1 px-4 bg-background dark:bg-background-dark"
+  testID="cities-screen"
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "currency": "EUR",
+          "id": 1,
+          "key": "barcelona",
+          "language": "Catalan",
+          "name": "Barcelona",
+          "nativeName": "Barcelona",
+        },
+        {
+          "currency": "EUR",
+          "id": 2,
+          "key": "madrid",
+          "language": "Spanish",
+          "name": "Madrid",
+          "nativeName": "Madrid",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          testID="CityCard-barcelona"
+        >
+          <View
+            className="flex-row justify-between items-center"
+          >
+            <View>
+              <View
+                className="flex-row flex-wrap items-baseline mb-1"
+                testID="city-names"
+              >
+                <Text
+                  className="text-2xl font-work-bold text-text-header dark:text-text-header-dark mr-2"
+                  testID="city-name"
+                >
+                  Barcelona
+                </Text>
+                <Text
+                  className="text-xl font-work-medium text-text dark:text-text-dark italic"
+                  testID="city-native-name"
+                >
+                  (
+                  Barcelona
+                  )
+                </Text>
+              </View>
+              <View
+                className="flex-row flex-wrap"
+                testID="city-details"
+              >
+                <Text
+                  className="text-base text-text dark:text-text-dark font-work-light mr-2"
+                  testID="city-currency"
+                >
+                  Currency: 
+                  EUR
+                </Text>
+                <Text
+                  className="text-base text-text dark:text-text-dark font-work-light"
+                  testID="city-language"
+                >
+                  Language: 
+                  Catalan
+                </Text>
+              </View>
+            </View>
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={24}
+              bbWidth={24}
+              fill="none"
+              focusable={false}
+              height={24}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              stroke="#262626"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 24,
+                    "width": 24,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <RNSVGGroup
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4280690214,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              >
+                <RNSVGPath
+                  d="m9 18 6-6-6-6"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4280690214,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          testID="CityCard-madrid"
+        >
+          <View
+            className="flex-row justify-between items-center"
+          >
+            <View>
+              <View
+                className="flex-row flex-wrap items-baseline mb-1"
+                testID="city-names"
+              >
+                <Text
+                  className="text-2xl font-work-bold text-text-header dark:text-text-header-dark mr-2"
+                  testID="city-name"
+                >
+                  Madrid
+                </Text>
+                <Text
+                  className="text-xl font-work-medium text-text dark:text-text-dark italic"
+                  testID="city-native-name"
+                >
+                  (
+                  Madrid
+                  )
+                </Text>
+              </View>
+              <View
+                className="flex-row flex-wrap"
+                testID="city-details"
+              >
+                <Text
+                  className="text-base text-text dark:text-text-dark font-work-light mr-2"
+                  testID="city-currency"
+                >
+                  Currency: 
+                  EUR
+                </Text>
+                <Text
+                  className="text-base text-text dark:text-text-dark font-work-light"
+                  testID="city-language"
+                >
+                  Language: 
+                  Spanish
+                </Text>
+              </View>
+            </View>
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={24}
+              bbWidth={24}
+              fill="none"
+              focusable={false}
+              height={24}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              stroke="#262626"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 24,
+                    "width": 24,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <RNSVGGroup
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4280690214,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              >
+                <RNSVGPath
+                  d="m9 18 6-6-6-6"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4280690214,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

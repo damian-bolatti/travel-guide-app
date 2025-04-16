@@ -32,7 +32,7 @@ exports[`CityCard render coincide con el snapshot 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  testID="city-card"
+  testID="CityCard-paris"
 >
   <View
     className="flex-row justify-between items-center"
