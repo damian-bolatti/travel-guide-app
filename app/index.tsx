@@ -1,6 +1,6 @@
-import React from "react";
-import { Redirect } from "expo-router";
-import { SafeAreaView } from "react-native";
+import React from 'react';
+import { Redirect } from 'expo-router';
+import { SafeAreaView } from 'react-native';
 
 const App = () => {
   return (

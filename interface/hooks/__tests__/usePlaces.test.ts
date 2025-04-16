@@ -1,16 +1,16 @@
-import { renderHook, act } from "@testing-library/react-native";
-import { usePlaces } from "../usePlaces";
-import { City } from "@/core/domain/entities/City";
-import { Place } from "@/core/domain/entities/Place";
+import { renderHook, act } from '@testing-library/react-native';
+import { usePlaces } from '../usePlaces';
+import { City } from '@/core/domain/entities/City';
+import { Place } from '@/core/domain/entities/Place';
 
-import { useCitiesStore } from "@/core/interface/store/useCitiesStore";
-import { usePlacesStore } from "@/core/interface/store/usePlacesStore";
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
 
-jest.mock("@/core/interface/store/useCitiesStore", () => ({
+jest.mock('@/core/interface/store/useCitiesStore', () => ({
   useCitiesStore: jest.fn(),
 }));
 
-jest.mock("@/core/interface/store/usePlacesStore", () => ({
+jest.mock('@/core/interface/store/usePlacesStore', () => ({
   usePlacesStore: jest.fn(),
 }));
 
@@ -19,22 +19,22 @@ const mockedUsePlacesStore = usePlacesStore as unknown as jest.Mock;
 
 const mockCity: City = {
   id: 1,
-  key: "paris",
-  name: "Paris",
-  nativeName: "Paris",
-  currency: "EUR",
-  language: "fr",
+  key: 'paris',
+  name: 'Paris',
+  nativeName: 'Paris',
+  currency: 'EUR',
+  language: 'fr',
 };
 
 const mockPlaces: Place[] = [
   {
-    name: "Eiffel Tower",
-    type: "monument",
+    name: 'Eiffel Tower',
+    type: 'monument',
     coordinates: [48.8584, 2.2945],
   },
 ];
 
-describe("usePlaces", () => {
+describe('usePlaces', () => {
   const fetchPlaces = jest.fn();
   const reset = jest.fn();
 
@@ -61,7 +61,7 @@ describe("usePlaces", () => {
     });
   });
 
-  it("calls fetchPlaces when selectedCity is present and places are empty", () => {
+  it('calls fetchPlaces when selectedCity is present and places are empty', () => {
     mockedUsePlacesStore.mockImplementation(() => ({
       places: [], // 👈 necesario para que fetch se dispare
       isLoading: false,
@@ -70,15 +70,15 @@ describe("usePlaces", () => {
     }));
 
     renderHook(() => usePlaces());
-    expect(fetchPlaces).toHaveBeenCalledWith("paris");
+    expect(fetchPlaces).toHaveBeenCalledWith('paris');
   });
 
-  it("does NOT call fetchPlaces when places are already loaded", () => {
+  it('does NOT call fetchPlaces when places are already loaded', () => {
     renderHook(() => usePlaces());
     expect(fetchPlaces).not.toHaveBeenCalled();
   });
 
-  it("does NOT call fetchPlaces when loading or error is present", () => {
+  it('does NOT call fetchPlaces when loading or error is present', () => {
     mockedUsePlacesStore.mockImplementation(() => ({
       places: [],
       isLoading: true,
@@ -92,7 +92,7 @@ describe("usePlaces", () => {
     mockedUsePlacesStore.mockImplementation(() => ({
       places: [],
       isLoading: false,
-      error: "Something went wrong",
+      error: 'Something went wrong',
       fetchPlaces,
     }));
 
@@ -100,7 +100,7 @@ describe("usePlaces", () => {
     expect(fetchPlaces).not.toHaveBeenCalled();
   });
 
-  it("returns the correct store values", () => {
+  it('returns the correct store values', () => {
     const { result } = renderHook(() => usePlaces());
 
     expect(result.current.places).toEqual(mockPlaces);
@@ -109,7 +109,7 @@ describe("usePlaces", () => {
     expect(result.current.fetchPlaces).toBe(fetchPlaces);
   });
 
-  it("calls reset from Zustand store", () => {
+  it('calls reset from Zustand store', () => {
     const { result } = renderHook(() => usePlaces());
 
     act(() => {

@@ -1,7 +1,7 @@
-import { create } from "zustand";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { create } from 'zustand';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-type Theme = "light" | "dark";
+type Theme = 'light' | 'dark';
 
 interface ThemeState {
   theme: Theme;
@@ -10,16 +10,16 @@ interface ThemeState {
 }
 
 export const useThemeStore = create<ThemeState>((set) => ({
-  theme: "light",
+  theme: 'light',
 
   setTheme: (theme) => {
-    AsyncStorage.setItem("theme", theme);
+    AsyncStorage.setItem('theme', theme);
     set({ theme });
   },
 
   loadTheme: async () => {
-    const saved = await AsyncStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") {
+    const saved = await AsyncStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
       set({ theme: saved });
     }
   },

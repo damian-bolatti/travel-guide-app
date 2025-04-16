@@ -1,7 +1,7 @@
-import * as LucideIcons from "lucide-react-native";
-import { ComponentType } from "react";
-import { useThemeStore } from "@/interface/theme/useThemeStore";
-import colors from "../theme/colors";
+import * as LucideIcons from 'lucide-react-native';
+import { ComponentType } from 'react';
+import { useThemeStore } from '@/interface/theme/useThemeStore';
+import colors from '../theme/colors';
 
 type IconName = keyof typeof LucideIcons;
 
@@ -22,7 +22,7 @@ export const Icon = ({ name, size = 24 }: IconProps) => {
     return null;
   }
 
-  const resolvedColor = theme === "dark" ? colors["icon-dark"] : colors.icon;
+  const resolvedColor = theme === 'dark' ? colors['icon-dark'] : colors.icon;
 
   return <LucideIcon size={size} color={resolvedColor} />;
 };

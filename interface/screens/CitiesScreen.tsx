@@ -1,11 +1,11 @@
-import { useCities } from "@/interface/hooks/useCities";
-import CityList from "@/interface/components/CityList";
-import React, { useLayoutEffect } from "react";
-import { View, Pressable } from "react-native";
-import Loader from "../shared/Loader";
-import Retry from "../shared/Retry";
-import { useNavigation } from "expo-router";
-import { Icon } from "../shared/Icon";
+import { useCities } from '@/interface/hooks/useCities';
+import CityList from '@/interface/components/CityList';
+import React, { useLayoutEffect } from 'react';
+import { View, Pressable } from 'react-native';
+import Loader from '../shared/Loader';
+import Retry from '../shared/Retry';
+import { useNavigation } from 'expo-router';
+import { Icon } from '../shared/Icon';
 
 const CitiesScreen = () => {
   const { cities, isLoading, error, fetchCities, reset } = useCities();
@@ -19,7 +19,7 @@ const CitiesScreen = () => {
     navigation.setOptions({
       headerLeft: () => (
         <Pressable
-          onPress={() => navigation.navigate("settings/index" as never)}
+          onPress={() => navigation.navigate('settings/index' as never)}
           className="pl-2"
           testID="go-to-settings"
         >
@@ -37,7 +37,7 @@ const CitiesScreen = () => {
       {isLoading && <Loader message="Loading cities..." />}
 
       {!isLoading && (error || showEmptyState) && (
-        <Retry message={error || "No cities available"} onRetry={fetchCities} />
+        <Retry message={error || 'No cities available'} onRetry={fetchCities} />
       )}
 
       {canShowList && <CityList cities={cities} />}

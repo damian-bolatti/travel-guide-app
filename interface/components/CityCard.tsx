@@ -1,9 +1,9 @@
-import { City } from "@/core/domain/entities/City";
-import { useCitiesStore } from "@/core/interface/store/useCitiesStore";
-import { useRouter } from "expo-router";
-import React from "react";
-import { View, Text, Pressable } from "react-native";
-import { Icon } from "../shared/Icon";
+import { City } from '@/core/domain/entities/City';
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { useRouter } from 'expo-router';
+import React from 'react';
+import { View, Text, Pressable } from 'react-native';
+import { Icon } from '../shared/Icon';
 
 interface CityCardProps {
   city: City;
@@ -15,7 +15,7 @@ const CityCard = ({ city }: CityCardProps) => {
 
   const handlePress = () => {
     setSelectedCity(city);
-    router.push("/cities/cityDetails");
+    router.push('/cities/cityDetails');
   };
 
   return (

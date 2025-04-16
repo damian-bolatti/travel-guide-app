@@ -1,7 +1,7 @@
-import { City } from "@/core/domain/entities/City";
-import { CityRepository } from "@/core/domain/repositories/CityRepository";
-import { fetchGraphQL } from "../graphql/fetchGraphQL";
-import { mapCityFromDTO } from "@/core/domain/mappers/city.mapper";
+import { City } from '@/core/domain/entities/City';
+import { CityRepository } from '@/core/domain/repositories/CityRepository';
+import { fetchGraphQL } from '../graphql/fetchGraphQL';
+import { mapCityFromDTO } from '@/core/domain/mappers/city.mapper';
 
 export class CityRepositoryImpl implements CityRepository {
   async getAll(): Promise<City[]> {

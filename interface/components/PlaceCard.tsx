@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text } from "react-native";
-import { Place } from "@/core/domain/entities/Place";
+import React from 'react';
+import { View, Text } from 'react-native';
+import { Place } from '@/core/domain/entities/Place';
 
 interface PlaceCardProps {
   place: Place;

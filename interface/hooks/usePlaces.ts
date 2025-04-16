@@ -1,6 +1,6 @@
-import { useCallback, useEffect } from "react";
-import { useCitiesStore } from "@/core/interface/store/useCitiesStore";
-import { usePlacesStore } from "@/core/interface/store/usePlacesStore";
+import { useCallback, useEffect } from 'react';
+import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
+import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
 
 export const usePlaces = () => {
   const { selectedCity } = useCitiesStore();

@@ -1,5 +1,5 @@
-import { PlaceDTO } from "../dtos/PlaceDTO";
-import { Place } from "../entities/Place";
+import { PlaceDTO } from '../dtos/PlaceDTO';
+import { Place } from '../entities/Place';
 
 export const mapPlaceFromDTO = (dto: PlaceDTO): Place => {
   return {
