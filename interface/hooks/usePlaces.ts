@@ -1,6 +1,6 @@
+import { useCallback, useEffect } from 'react';
 import { useCitiesStore } from '@/core/interface/store/useCitiesStore';
 import { usePlacesStore } from '@/core/interface/store/usePlacesStore';
-import { useCallback, useEffect } from 'react';
 
 export const usePlaces = () => {
   const { selectedCity } = useCitiesStore();
@@ -12,14 +12,16 @@ export const usePlaces = () => {
   } = usePlacesStore();
 
   useEffect(() => {
-    if (selectedCity) {
+    const shouldFetch = selectedCity && selectedCity.key && places.length === 0 && !isLoading && !error;
+
+    if (shouldFetch) {
       fetchPlaces(selectedCity.key);
     }
-  }, [selectedCity]);
+  }, [selectedCity, places.length, isLoading, error, fetchPlaces]);
 
   const reset = useCallback(() => {
     usePlacesStore.getState().reset();
-    }, []);
+  }, []);
 
   return {
     places,

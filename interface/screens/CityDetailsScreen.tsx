@@ -12,7 +12,9 @@ const CityDetailsScreen = () => {
   const { selectedCity } = useCities();
   const { places, isLoading, error, reset, fetchPlaces } = usePlaces();
 
-  const showEmptyState = !isLoading && !error && places.length === 0;
+  const hasPlaces = places.length > 0;
+  const canShowPlaces = !isLoading && !error && hasPlaces;
+  const showEmptyState = !isLoading && !error && !hasPlaces;
 
   useLayoutEffect(() => {
     if (selectedCity) {
@@ -41,6 +43,7 @@ const CityDetailsScreen = () => {
     <ScrollView
       testID="city-details"
       className="flex-1 px-4 bg-background dark:bg-background-dark"
+      contentContainerStyle={{ flexGrow: 1 }}
     >
       <Text
         testID="city-native-name"
@@ -72,12 +75,12 @@ const CityDetailsScreen = () => {
 
       {showEmptyState && (
         <Retry
-          message="No cities available"
+          message="No places available"
           onRetry={() => fetchPlaces(selectedCity.key)}
         />
       )}
 
-      {!isLoading && !error && places.length > 0 && (
+      {canShowPlaces && (
         <PlaceList places={places} />
       )}
     </ScrollView>
