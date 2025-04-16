@@ -3,6 +3,11 @@
 exports[`CityDetailsScreen matches snapshot 1`] = `
 <RCTScrollView
   className="flex-1 px-4 bg-background dark:bg-background-dark"
+  contentContainerStyle={
+    {
+      "flexGrow": 1,
+    }
+  }
   testID="city-details"
 >
   <View>
@@ -31,7 +36,7 @@ exports[`CityDetailsScreen matches snapshot 1`] = `
     <Text
       testID="retry"
     >
-      No cities available
+      No places available
     </Text>
   </View>
 </RCTScrollView>

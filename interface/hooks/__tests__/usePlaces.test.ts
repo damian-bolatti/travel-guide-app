@@ -61,9 +61,43 @@ describe('usePlaces', () => {
     });
   });
 
-  it('calls fetchPlaces when selectedCity is present', () => {
+  it('calls fetchPlaces when selectedCity is present and places are empty', () => {
+    mockedUsePlacesStore.mockImplementation(() => ({
+      places: [], // 👈 necesario para que fetch se dispare
+      isLoading: false,
+      error: null,
+      fetchPlaces,
+    }));
+
     renderHook(() => usePlaces());
     expect(fetchPlaces).toHaveBeenCalledWith('paris');
+  });
+
+  it('does NOT call fetchPlaces when places are already loaded', () => {
+    renderHook(() => usePlaces());
+    expect(fetchPlaces).not.toHaveBeenCalled();
+  });
+
+  it('does NOT call fetchPlaces when loading or error is present', () => {
+    mockedUsePlacesStore.mockImplementation(() => ({
+      places: [],
+      isLoading: true,
+      error: null,
+      fetchPlaces,
+    }));
+
+    renderHook(() => usePlaces());
+    expect(fetchPlaces).not.toHaveBeenCalled();
+
+    mockedUsePlacesStore.mockImplementation(() => ({
+      places: [],
+      isLoading: false,
+      error: 'Something went wrong',
+      fetchPlaces,
+    }));
+
+    renderHook(() => usePlaces());
+    expect(fetchPlaces).not.toHaveBeenCalled();
   });
 
   it('returns the correct store values', () => {
@@ -72,6 +106,7 @@ describe('usePlaces', () => {
     expect(result.current.places).toEqual(mockPlaces);
     expect(result.current.isLoading).toBe(false);
     expect(result.current.error).toBeNull();
+    expect(result.current.fetchPlaces).toBe(fetchPlaces);
   });
 
   it('calls reset from Zustand store', () => {
