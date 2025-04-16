@@ -4,15 +4,18 @@ import { Place } from '@/core/domain/entities/Place';
 import PlaceCard from './PlaceCard';
 
 interface PlaceListProps {
-  places: Place[];
+  places: Place[]; 
 }
 
 const PlaceList = ({ places }: PlaceListProps) => {
   if (!places.length) return null;
 
   return (
-    <View className="mt-4">
-      <Text className="text-xl font-work-bold text-text-header dark:text-text-header-dark mb-2">
+    <View className="mt-4" testID="place-list">
+      <Text
+        testID="place-list-title"
+        className="text-xl font-work-bold text-text-header dark:text-text-header-dark mb-2"
+      >
         Places to visit:
       </Text>
 

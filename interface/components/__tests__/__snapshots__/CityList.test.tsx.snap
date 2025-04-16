@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityList matches snapshot 1`] = `
+<RCTScrollView
+  data={
+    [
+      {
+        "currency": "EUR",
+        "id": 1,
+        "key": "paris",
+        "language": "fr",
+        "name": "Paris",
+        "nativeName": "Paris",
+      },
+      {
+        "currency": "EUR",
+        "id": 2,
+        "key": "barcelona",
+        "language": "es",
+        "name": "Barcelona",
+        "nativeName": "Barcelona",
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={0.0001}
+  showsVerticalScrollIndicator={false}
+  stickyHeaderIndices={[]}
+  viewabilityConfigCallbackPairs={[]}
+>
+  <View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        testID="city-card-paris"
+      />
+    </View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        testID="city-card-barcelona"
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;

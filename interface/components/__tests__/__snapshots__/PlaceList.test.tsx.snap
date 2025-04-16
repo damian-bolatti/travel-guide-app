@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceList matches snapshot 1`] = `
+<View
+  className="mt-4"
+  testID="place-list"
+>
+  <Text
+    className="text-xl font-work-bold text-text-header dark:text-text-header-dark mb-2"
+    testID="place-list-title"
+  >
+    Places to visit:
+  </Text>
+  <View />
+  <View />
+</View>
+`;
