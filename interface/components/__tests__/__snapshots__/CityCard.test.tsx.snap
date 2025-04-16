@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityCard render coincide con el snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID="city-card"
+>
+  <View
+    className="flex-row justify-between items-center"
+  >
+    <View>
+      <View
+        className="flex-row flex-wrap items-baseline mb-1"
+        testID="city-names"
+      >
+        <Text
+          className="text-2xl font-work-bold text-text-header dark:text-text-header-dark mr-2"
+          testID="city-name"
+        >
+          Paris
+        </Text>
+        <Text
+          className="text-xl font-work-medium text-text dark:text-text-dark italic"
+          testID="city-native-name"
+        >
+          (
+          Paris
+          )
+        </Text>
+      </View>
+      <View
+        className="flex-row flex-wrap"
+        testID="city-details"
+      >
+        <Text
+          className="text-base text-text dark:text-text-dark font-work-light mr-2"
+          testID="city-currency"
+        >
+          Currency: 
+          EUR
+        </Text>
+        <Text
+          className="text-base text-text dark:text-text-dark font-work-light"
+          testID="city-language"
+        >
+          Language: 
+          fr
+        </Text>
+      </View>
+    </View>
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={24}
+      bbWidth={24}
+      fill="none"
+      focusable={false}
+      height={24}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      stroke="#262626"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      style={
+        [
+          {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          [
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280690214,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth={2}
+      >
+        <RNSVGPath
+          d="m9 18 6-6-6-6"
+          fill={null}
+          propList={
+            [
+              "fill",
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+              "strokeLinejoin",
+            ]
+          }
+          stroke={
+            {
+              "payload": 4280690214,
+              "type": 0,
+            }
+          }
+          strokeLinecap={1}
+          strokeLinejoin={1}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

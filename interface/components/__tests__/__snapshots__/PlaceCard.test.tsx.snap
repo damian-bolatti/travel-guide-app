@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceCard matches snapshot 1`] = `
+<View
+  className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+  testID="place-card"
+>
+  <Text
+    className="text-xl font-work-bold text-text-header dark:text-text-header-dark mr-2"
+    testID="place-name"
+  >
+    Eiffel Tower
+  </Text>
+  <Text
+    className="text-xl font-work-medium text-icon dark:text-icon-dark italic"
+    testID="place-type"
+  >
+    monument
+  </Text>
+  <Text
+    className="text-xs text-icon dark:text-icon-dark mt-1"
+    testID="place-coordinates"
+  >
+    Lat: 
+    48.8584
+    , Lon: 
+    2.2945
+  </Text>
+</View>
+`;
