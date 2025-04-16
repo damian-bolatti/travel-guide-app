@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CitiesScreen matches snapshot 1`] = `
+<View
+  className="flex-1 px-4 bg-background dark:bg-background-dark"
+  testID="cities-screen"
+>
+  <View
+    testID="empty-retry"
+  >
+    <Text>
+      No cities available
+    </Text>
+  </View>
+</View>
+`;

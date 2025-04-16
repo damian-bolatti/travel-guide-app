@@ -17,7 +17,7 @@ const CitiesScreen = () => {
     navigation.setOptions({
       headerLeft: () => (
         <Pressable onPress={() => navigation.navigate('settings/index' as never)} className="pl-2">
-          <Icon name="Settings"/>
+          <Icon name="Settings" />
         </Pressable>
       ),
     });
@@ -30,21 +30,15 @@ const CitiesScreen = () => {
   }, []);
 
   return (
-    <View className="flex-1 px-4 bg-background dark:bg-background-dark">
+    <View className="flex-1 px-4 bg-background dark:bg-background-dark" testID="cities-screen">
       {isLoading && <Loader message="Loading cities..." />}
 
       {error && (
-        <Retry
-          message={error}
-          onRetry={fetchCities}
-        />
+        <Retry message={error} onRetry={fetchCities} />
       )}
 
       {showEmptyState && (
-        <Retry
-          message="No cities available"
-          onRetry={fetchCities}
-        />
+        <Retry message="No cities available" onRetry={fetchCities} />
       )}
 
       {!isLoading && !error && cities.length > 0 && (
