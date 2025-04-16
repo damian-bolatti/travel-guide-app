@@ -28,21 +28,36 @@ const CityDetailsScreen = () => {
 
   if (!selectedCity) {
     return (
-      <View className="flex-1 justify-center items-center bg-background dark:bg-background-dark">
+      <View
+        testID="no-city"
+        className="flex-1 justify-center items-center bg-background dark:bg-background-dark"
+      >
         <Text className="text-icon dark:text-icon-dark">City not found</Text>
       </View>
     );
   }
 
   return (
-    <ScrollView className="flex-1 px-4 bg-background dark:bg-background-dark">
-      <Text className="text-2xl font-work-medium text-text dark:text-text-dark italic mb-1">
+    <ScrollView
+      testID="city-details"
+      className="flex-1 px-4 bg-background dark:bg-background-dark"
+    >
+      <Text
+        testID="city-native-name"
+        className="text-2xl font-work-medium text-text dark:text-text-dark italic mb-1"
+      >
         ({selectedCity.nativeName})
       </Text>
-      <Text className="text-base text-text dark:text-text-dark font-work-light mb-1">
+      <Text
+        testID="city-currency"
+        className="text-base text-text dark:text-text-dark font-work-light mb-1"
+      >
         Currency: {selectedCity.currency}
       </Text>
-      <Text className="text-base text-text dark:text-text-dark font-work-light mb-4">
+      <Text
+        testID="city-language"
+        className="text-base text-text dark:text-text-dark font-work-light mb-4"
+      >
         Language: {selectedCity.language}
       </Text>
 

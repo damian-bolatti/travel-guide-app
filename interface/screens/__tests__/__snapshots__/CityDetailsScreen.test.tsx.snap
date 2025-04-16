@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityDetailsScreen matches snapshot 1`] = `
+<RCTScrollView
+  className="flex-1 px-4 bg-background dark:bg-background-dark"
+  testID="city-details"
+>
+  <View>
+    <Text
+      className="text-2xl font-work-medium text-text dark:text-text-dark italic mb-1"
+      testID="city-native-name"
+    >
+      (
+      Paris
+      )
+    </Text>
+    <Text
+      className="text-base text-text dark:text-text-dark font-work-light mb-1"
+      testID="city-currency"
+    >
+      Currency: 
+      EUR
+    </Text>
+    <Text
+      className="text-base text-text dark:text-text-dark font-work-light mb-4"
+      testID="city-language"
+    >
+      Language: 
+      fr
+    </Text>
+    <Text
+      testID="retry"
+    >
+      No cities available
+    </Text>
+  </View>
+</RCTScrollView>
+`;
