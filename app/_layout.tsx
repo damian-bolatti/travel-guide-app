@@ -4,6 +4,7 @@ import "./global.css";
 import { useFonts } from "expo-font";
 import { useThemeStore } from "@/interface/theme/useThemeStore";
 import { useColorScheme } from "nativewind";
+import { View } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,9 +35,12 @@ const RootLayout = () => {
     setColorScheme(theme);
   }, [theme]);
 
-  if (!fontsLoaded || !themeReady) return null;
+  return (
+    <View className="flex-1 bg-background dark:bg-background-dark">
+      {fontsLoaded && themeReady ? <Slot /> : null}
+    </View>
+  );
 
-  return <Slot />;
 };
 
 export default RootLayout;
