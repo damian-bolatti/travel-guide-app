@@ -11,12 +11,14 @@ const CitiesScreen = () => {
   const { cities, isLoading, error, fetchCities, reset } = useCities();
   const navigation = useNavigation();
 
-  const showEmptyState = !isLoading && !error && cities.length === 0;
+  const hasCities = cities.length > 0;
+  const canShowList = !isLoading && !error && hasCities;
+  const showEmptyState = !isLoading && !error && !hasCities;
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Pressable onPress={() => navigation.navigate('settings/index' as never)} className="pl-2">
+        <Pressable onPress={() => navigation.navigate('settings/index' as never)} className="pl-2" testID="go-to-settings">
           <Icon name="Settings" />
         </Pressable>
       ),
@@ -33,15 +35,14 @@ const CitiesScreen = () => {
     <View className="flex-1 px-4 bg-background dark:bg-background-dark" testID="cities-screen">
       {isLoading && <Loader message="Loading cities..." />}
 
-      {error && (
-        <Retry message={error} onRetry={fetchCities} />
+      {!isLoading && (error || showEmptyState) && (
+        <Retry
+          message={error || 'No cities available'}
+          onRetry={fetchCities}
+        />
       )}
 
-      {showEmptyState && (
-        <Retry message="No cities available" onRetry={fetchCities} />
-      )}
-
-      {!isLoading && !error && cities.length > 0 && (
+      {canShowList && (
         <CityList cities={cities} />
       )}
     </View>

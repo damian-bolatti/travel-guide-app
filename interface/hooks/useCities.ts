@@ -13,8 +13,10 @@ export const useCities = () => {
   } = useCitiesStore();
 
   useEffect(() => {
-    fetchCities();
-  }, []);
+    if (cities.length === 0 && !isLoading && !error) {
+      fetchCities();
+    }
+  }, [cities.length, isLoading, error, fetchCities]);
 
   const selectCity = (city: City) => {
     setSelectedCity(city);
@@ -31,6 +33,6 @@ export const useCities = () => {
     selectedCity,
     selectCity,
     reset,
-    fetchCities
+    fetchCities,
   };
 };

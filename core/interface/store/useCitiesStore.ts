@@ -1,9 +1,9 @@
-import { City } from "@/core/domain/entities/City";
-import { GetAllCities } from "@/core/domain/usecases/GetAllCities";
-import { CityRepositoryImpl } from "@/core/infrastructure/repositories/CityRepositoryImpl";
-import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
+import { City } from '@/core/domain/entities/City';
+import { GetAllCities } from '@/core/domain/usecases/GetAllCities';
+import { CityRepositoryImpl } from '@/core/infrastructure/repositories/CityRepositoryImpl';
 
 interface CitiesState {
   cities: City[];
@@ -28,13 +28,26 @@ export const useCitiesStore = create<CitiesState>()(
 
       fetchCities: async () => {
         set({ isLoading: true, error: null }, false, 'cities/fetchCities');
+
         try {
           const cities = await getAllCities.execute();
           set({ cities, isLoading: false }, false, 'cities/fetchCitiesSuccess');
         } catch (err: any) {
+          let message = 'Unexpected error';
+
+          if (err.message === 'No internet connection') {
+            message = 'No internet connection. Please check your network and try again.';
+          } else if (err.message.toLowerCase().includes('timeout')) {
+            message = 'The request timed out. Please try again later.';
+          } else if (err.message.toLowerCase().includes('graphql')) {
+            message = 'There was a problem retrieving city data from the server.';
+          } else if (err.message) {
+            message = err.message;
+          }
+
           set(
             {
-              error: err.message || 'Error fetching cities',
+              error: message,
               isLoading: false,
             },
             false,
