@@ -24,7 +24,7 @@ describe('Icon', () => {
   it('renders the icon with light theme color', () => {
     useThemeStore.mockReturnValue({ theme: 'light' });
 
-    render(<Icon name="Sun" size={32} />);
+    render(<Icon name="Sun" size={32} color="soft"/>);
 
     expect(LucideIcons.Sun).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -38,7 +38,7 @@ describe('Icon', () => {
   it('renders the icon with dark theme color', () => {
     useThemeStore.mockReturnValue({ theme: 'dark' });
 
-    render(<Icon name="Moon" />);
+    render(<Icon name="Moon" color="soft"/>);
 
     expect(LucideIcons.Moon).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -52,7 +52,7 @@ describe('Icon', () => {
   it('matches snapshot', () => {
     useThemeStore.mockReturnValue({ theme: 'light' });
 
-    const tree = render(<Icon name="Home" size={20} />).toJSON();
+    const tree = render(<Icon name="Home" size={20} color="soft"/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

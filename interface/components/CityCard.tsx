@@ -44,23 +44,25 @@ const CityCard = ({ city }: CityCardProps) => {
             </Text>
           </View>
 
-          <View className="flex-row flex-wrap" testID="city-details">
+          <View className="flex-row flex-wrap items-center" testID="city-details">
+            <Icon name="Banknote" color="soft" />
             <Text
-              className="text-base text-text dark:text-text-dark font-work-light mr-2"
+              className="text-xl text-text dark:text-text-dark font-work-light mx-2"
               testID="city-currency"
             >
-              Currency: {city.currency}
+              {city.currency}
             </Text>
+            <Icon name="Speech" color="soft" />
             <Text
-              className="text-base text-text dark:text-text-dark font-work-light"
+              className="text-xl text-text dark:text-text-dark font-work-light mx-2"
               testID="city-language"
             >
-              Language: {city.language}
+              {city.language}
             </Text>
           </View>
         </View>
 
-        <Icon name="ChevronRight" />
+        <Icon name="ChevronRight" color="soft"/>
       </View>
     </Pressable>
   );
