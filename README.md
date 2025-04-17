@@ -9,9 +9,11 @@ A mobile application built with **React Native + Expo** for exploring tourist pl
 - Clean architecture (hexagonal) with SOLID principles
 - Dark/light theme with persistent state using Zustand + AsyncStorage
 - Scalable design system with Tailwind CSS
+- Offline support for city list using Zustand + AsyncStorage
 - Advanced testing: unit, integration
 - Local mock API using `json-graphql-server`
 - State management with dependency injection via Zustand stores
+- Continuous Integration with GitHub Actions
 
 ---
 
@@ -19,7 +21,7 @@ A mobile application built with **React Native + Expo** for exploring tourist pl
 
 ### Prerequisites
 
-- Node.js >= 20
+- Node.js >= 22
 - Expo CLI
 
 ### Installation
@@ -28,8 +30,31 @@ A mobile application built with **React Native + Expo** for exploring tourist pl
 git clone https://github.com/your-username/travel-guide-app.git
 cd travel-guide-app
 npm install
+```
+
+### Run the App
+
+- Start the Expo development server:
+
+```bash
 npx expo start
 ```
+
+- Start the local mock API (GraphQL):
+
+```bash
+npm run start:api
+```
+
+- To run on specific platforms:
+
+```bash
+npm run android # ✅ Tested
+npm run ios # ⚠️ Not tested
+npm run web # ⚠️ Not tested
+```
+
+- Note: The application has been tested only on Android. iOS and Web support is expected but not officially tested.
 
 ---
 
@@ -117,3 +142,9 @@ This simulates the backend and allows development/testing without a real API.
 - Configurable via Zustand store
 - Stored persistently with AsyncStorage
 - Tailwind-based styling system
+
+---
+
+## CI/CD
+
+This project uses **GitHub Actions** for continuous integration. Tests are run automatically on every push to the `main` branch to ensure code quality and reliability.
