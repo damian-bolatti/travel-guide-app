@@ -39,7 +39,7 @@ describe('CityCard', () => {
   });
 
   describe('render', () => {
-    it('muestra la información de la ciudad correctamente', () => {
+    it('displays city information correctly', () => {
       const { getByTestId } = render(<CityCard city={mockCity} />);
 
       expect(getByTestId('city-name').props.children).toBe('Paris');
@@ -48,16 +48,14 @@ describe('CityCard', () => {
       expect(getByTestId('city-language').props.children).toContain('fr');
     });
 
-    it('aplica correctamente las clases Tailwind', () => {
+    it('applies correct Tailwind classes', () => {
       const { getByTestId } = render(<CityCard city={mockCity} />);
+      const card = getByTestId(`CityCard-${mockCity.key}`);
 
-      expect(getByTestId('city-card').props.className).toContain(
-        'bg-card-background',
-      );
-      expect(getByTestId('city-card').props.className).toContain(
-        'dark:bg-card-background-dark',
-      );
-      expect(getByTestId('city-card').props.className).toContain('p-4');
+      expect(card.props.className).toContain('bg-card-background');
+      expect(card.props.className).toContain('dark:bg-card-background-dark');
+      expect(card.props.className).toContain('p-4');
+      expect(card.props.className).toContain('rounded-sm');
 
       expect(getByTestId('city-name').props.className).toContain('text-2xl');
       expect(getByTestId('city-name').props.className).toContain(
@@ -68,10 +66,10 @@ describe('CityCard', () => {
       );
 
       expect(getByTestId('city-native-name').props.className).toContain(
-        'text-xl',
+        'italic',
       );
       expect(getByTestId('city-native-name').props.className).toContain(
-        'italic',
+        'text-xl',
       );
       expect(getByTestId('city-native-name').props.className).toContain(
         'dark:text-text-dark',
@@ -89,16 +87,16 @@ describe('CityCard', () => {
       );
     });
 
-    it('coincide con el snapshot', () => {
+    it('matches snapshot', () => {
       const tree = render(<CityCard city={mockCity} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
 
-  describe('interacción', () => {
-    it('navega y actualiza el store al pulsar', () => {
+  describe('interaction', () => {
+    it('calls store and navigates on press', () => {
       const { getByTestId } = render(<CityCard city={mockCity} />);
-      fireEvent.press(getByTestId('city-card'));
+      fireEvent.press(getByTestId(`CityCard-${mockCity.key}`));
 
       expect(mockSetSelectedCity).toHaveBeenCalledWith(mockCity);
       expect(mockPush).toHaveBeenCalledWith('/cities/cityDetails');

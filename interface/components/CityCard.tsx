@@ -22,7 +22,7 @@ const CityCard = ({ city }: CityCardProps) => {
     <Pressable
       onPress={handlePress}
       className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
-      testID="city-card"
+      testID={`CityCard-${city.key}`}
     >
       <View className="flex-row justify-between items-center">
         <View>

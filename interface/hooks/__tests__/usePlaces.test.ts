@@ -63,7 +63,7 @@ describe('usePlaces', () => {
 
   it('calls fetchPlaces when selectedCity is present and places are empty', () => {
     mockedUsePlacesStore.mockImplementation(() => ({
-      places: [], // 👈 necesario para que fetch se dispare
+      places: [],
       isLoading: false,
       error: null,
       fetchPlaces,

@@ -3,6 +3,9 @@ import { render } from '@testing-library/react-native';
 import PlaceCard from '../PlaceCard';
 import { Place } from '@/core/domain/entities/Place';
 
+// todo: Move to utils
+const sanitize = (name: string) => name.replace(/\s+/g, '-').toLowerCase();
+
 const mockPlace: Place = {
   name: 'Eiffel Tower',
   type: 'monument',
@@ -10,13 +13,17 @@ const mockPlace: Place = {
 };
 
 describe('PlaceCard', () => {
+  const testID = `PlaceCard-${sanitize(mockPlace.name)}`;
+
   it('renders place data correctly', () => {
     const { getByTestId } = render(<PlaceCard place={mockPlace} />);
 
-    expect(getByTestId('place-name').props.children).toBe('Eiffel Tower');
-    expect(getByTestId('place-type').props.children).toBe('monument');
+    expect(getByTestId(`${testID}-name`).props.children).toBe('Eiffel Tower');
+    expect(getByTestId(`${testID}-type`).props.children).toBe('monument');
 
-    const coordsText = getByTestId('place-coordinates').props.children.join('');
+    const coords = getByTestId(`${testID}-coordinates`).props.children;
+    const coordsText = Array.isArray(coords) ? coords.join('') : coords;
+
     expect(coordsText).toContain('48.8584');
     expect(coordsText).toContain('2.2945');
   });
@@ -24,35 +31,39 @@ describe('PlaceCard', () => {
   it('applies correct Tailwind classes', () => {
     const { getByTestId } = render(<PlaceCard place={mockPlace} />);
 
-    expect(getByTestId('place-card').props.className).toContain(
+    expect(getByTestId(`${testID}`).props.className).toContain(
       'bg-card-background',
     );
-    expect(getByTestId('place-card').props.className).toContain(
+    expect(getByTestId(`${testID}`).props.className).toContain(
       'dark:bg-card-background-dark',
     );
-    expect(getByTestId('place-card').props.className).toContain('p-4');
+    expect(getByTestId(`${testID}`).props.className).toContain('p-4');
 
-    expect(getByTestId('place-name').props.className).toContain('text-xl');
-    expect(getByTestId('place-name').props.className).toContain(
+    expect(getByTestId(`${testID}-name`).props.className).toContain('text-xl');
+    expect(getByTestId(`${testID}-name`).props.className).toContain(
       'font-work-bold',
     );
-    expect(getByTestId('place-name').props.className).toContain(
+    expect(getByTestId(`${testID}-name`).props.className).toContain(
       'text-text-header',
     );
-    expect(getByTestId('place-name').props.className).toContain(
+    expect(getByTestId(`${testID}-name`).props.className).toContain(
       'dark:text-text-header-dark',
     );
 
-    expect(getByTestId('place-type').props.className).toContain(
+    expect(getByTestId(`${testID}-type`).props.className).toContain(
       'font-work-medium',
     );
-    expect(getByTestId('place-type').props.className).toContain('italic');
-    expect(getByTestId('place-type').props.className).toContain('text-icon');
+    expect(getByTestId(`${testID}-type`).props.className).toContain('italic');
+    expect(getByTestId(`${testID}-type`).props.className).toContain(
+      'text-icon',
+    );
 
-    expect(getByTestId('place-coordinates').props.className).toContain(
+    expect(getByTestId(`${testID}-coordinates`).props.className).toContain(
       'text-xs',
     );
-    expect(getByTestId('place-coordinates').props.className).toContain('mt-1');
+    expect(getByTestId(`${testID}-coordinates`).props.className).toContain(
+      'mt-1',
+    );
   });
 
   it('matches snapshot', () => {
