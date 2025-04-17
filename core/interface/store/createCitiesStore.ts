@@ -1,11 +1,10 @@
-// core/interface/store/createCitiesStore.ts
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { City } from '@/core/domain/entities/City';
 import { GetAllCities } from '@/core/domain/usecases/GetAllCities';
-import { CityRepository } from '@/core/domain/repositories/CityRepository'; // <- usa tu interfaz
+import { CityRepository } from '@/core/domain/repositories/CityRepository';
 
 interface CitiesState {
   cities: City[];

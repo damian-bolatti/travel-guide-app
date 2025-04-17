@@ -1,4 +1,3 @@
-// utils/errorHandler.ts
 export const handleHTTPError = (statusCode: number): string => {
   switch (statusCode) {
     case 400:

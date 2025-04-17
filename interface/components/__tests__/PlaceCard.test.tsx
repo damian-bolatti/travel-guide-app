@@ -3,7 +3,7 @@ import { render } from '@testing-library/react-native';
 import PlaceCard from '../PlaceCard';
 import { Place } from '@/core/domain/entities/Place';
 
-// 👉 el mismo sanitize usado en el componente
+// todo: Move to utils
 const sanitize = (name: string) => name.replace(/\s+/g, '-').toLowerCase();
 
 const mockPlace: Place = {
