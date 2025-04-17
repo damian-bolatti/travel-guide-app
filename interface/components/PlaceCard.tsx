@@ -32,9 +32,8 @@ const PlaceCard = ({ place }: PlaceCardProps) => {
       className="bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3"
     >
       <View className="flex-row justify-between items-center">
-        {/* Izquierda: icono + información */}
         <View className="flex-row flex-1 pr-4">
-          <View className="mr-4 mt-1">
+          <View className="mr-4 flex justify-center items-center">
             <Icon name={iconName} size={62} color="soft" />
           </View>
 
@@ -60,7 +59,6 @@ const PlaceCard = ({ place }: PlaceCardProps) => {
           </View>
         </View>
 
-        {/* Derecha: botón vertical centrado */}
         <TouchableOpacity
           onPress={handleOpenMap}
           className="items-center justify-center w-16"
