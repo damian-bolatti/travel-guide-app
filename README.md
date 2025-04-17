@@ -1,50 +1,119 @@
-# Welcome to your Expo app 👋
+# Travel Guide App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application built with **React Native + Expo** for exploring tourist places by city. The project is designed with a clean architecture approach and advanced software engineering practices to ensure scalability, maintainability, and testability.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- Clean architecture (hexagonal) with SOLID principles
+- Dark/light theme with persistent state using Zustand + AsyncStorage
+- Scalable design system with Tailwind CSS
+- Advanced testing: unit, integration
+- Local mock API using `json-graphql-server`
+- State management with dependency injection via Zustand stores
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## Getting Started
 
-In the output, you'll find options to open the app in a
+### Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js >= 20
+- Expo CLI
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Installation
 
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/travel-guide-app.git
+cd travel-guide-app
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Project Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+.
+├── app/                    # Navigation and layout entry points (App Router)
+│   ├── (stack)/            # Screens organized by stack groups
+│   │   ├── cities/         # Screens related to cities
+│   │   └── settings/       # Screens related to app settings
+│   ├── _layout.tsx         # Layout definition for routing
+│   ├── global.css          # Global styles
+│   └── index.tsx           # Entry point of the app
+├── assets/                 # Fonts and images
+│   ├── fonts/              # Custom fonts used in the app
+│   └── images/             # Static image assets
+├── core/                   # Core domain and application logic
+│   ├── domain/             # Domain layer (business logic)
+│   │   ├── dtos/           # Data Transfer Objects for external/internal mapping
+│   │   ├── entities/       # Domain entities
+│   │   ├── mappers/        # Transformations between layers
+│   │   ├── repositories/   # Repository interfaces (contracts)
+│   │   └── usecases/       # Application use cases
+│   ├── infrastructure/     # Implementation details of interfaces
+│   │   ├── graphql/        # GraphQL queries
+│   │   └── repositories/   # Repository implementations
+│   ├── interface/          # Interface to external tools (Zustand stores)
+│   └── utils/              # Shared utility functions
+├── interface/              # UI layer
+│   ├── components/         # UI components
+│   ├── hooks/              # Custom React hooks
+│   ├── screens/            # Screen-level components
+│   ├── shared/             # Shared UI resources
+│   └── theme/              # Theme configuration
+├── __mocks__/              # Manual mocks for testing
+├── __tests__/integration/  # Integration tests
+├── .github/                # GitHub-specific configuration for Actions
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Scripts
 
-Join our community of developers creating universal apps.
+```bash
+npm run start             # Start Expo development server
+npm run start:api         # Start local GraphQL mock API on port 4000
+npm run android           # Run on Android emulator
+npm run ios               # Run on iOS simulator
+npm run web               # Run in browser
+npm run test              # Run unit tests
+npm run test:watch        # Run tests in watch mode
+npm run test:coverage     # Run tests with coverage report
+npm run lint              # Run ESLint
+npm run format            # Format code with Prettier
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Testing
+
+- **Unit Testing**: `jest-expo` + `@testing-library/react-native`
+- **Integration Testing**: Component interaction with mocks and real behavior
+
+```bash
+npm test
+```
+
+---
+
+## Mock API (GraphQL)
+
+A mock GraphQL API is served using `json-graphql-server` with a `db.js` file:
+
+```bash
+npm run start:api
+```
+
+This simulates the backend and allows development/testing without a real API.
+
+---
+
+## Theme (Dark/Light)
+
+- Configurable via Zustand store
+- Stored persistently with AsyncStorage
+- Tailwind-based styling system
