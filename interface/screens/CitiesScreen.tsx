@@ -15,8 +15,6 @@ const CitiesScreen = () => {
   const canShowList = !isLoading && !error && hasCities;
   const showEmptyState = !isLoading && !error && !hasCities;
 
-  console.log('cities', cities);
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (

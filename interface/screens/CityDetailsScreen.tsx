@@ -5,7 +5,7 @@ import { useCities } from '../hooks/useCities';
 import Loader from '../shared/Loader';
 import PlaceList from '../components/PlaceList';
 import Retry from '../shared/Retry';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from 'expo-router';
 
 const CityDetailsScreen = () => {
   const navigation = useNavigation();

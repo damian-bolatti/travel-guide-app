@@ -5,8 +5,9 @@ import CityDetailsScreen from '../CityDetailsScreen';
 import { useCities } from '../../hooks/useCities';
 import { usePlaces } from '../../hooks/usePlaces';
 
-jest.mock('@react-navigation/native', () => ({
+jest.mock('expo-router', () => ({
   useNavigation: () => ({
+    navigate: jest.fn(),
     setOptions: jest.fn(),
   }),
 }));
