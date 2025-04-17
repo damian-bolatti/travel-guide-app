@@ -8,7 +8,7 @@ import { useNavigation } from 'expo-router';
 import { Icon } from '../shared/Icon';
 
 const CitiesScreen = () => {
-  const { cities, isLoading, error, fetchCities, reset } = useCities();
+  const { cities, isLoading, error, fetchCities } = useCities();
   const navigation = useNavigation();
 
   const hasCities = cities.length > 0;

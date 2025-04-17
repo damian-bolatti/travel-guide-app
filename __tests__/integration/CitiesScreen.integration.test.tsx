@@ -48,7 +48,7 @@ jest.mock('@/core/interface/store/useCitiesStore', () => {
 });
 
 describe('CitiesScreen (mocked repository)', () => {
-  // Step 1: Reset Zustand store to ensure clean state before each test
+  // Step 1: Reset useCitiesStore store to ensure clean state before each test
   beforeEach(() => {
     useCitiesStore.getState().reset();
   });
@@ -73,7 +73,7 @@ describe('CitiesScreen (mocked repository)', () => {
     // Step 5: Simulate press on the first city card
     fireEvent.press(screen.getByTestId('CityCard-barcelona'));
 
-    // Step 6: Validate that selectedCity in Zustand matches the selected item
+    // Step 6: Validate that selectedCity in useCitiesStore matches the selected item
     const selected = useCitiesStore.getState().selectedCity;
     expect(selected?.key).toBe('barcelona');
 
