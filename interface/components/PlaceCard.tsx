@@ -13,7 +13,7 @@ const PlaceCard = ({ place }: PlaceCardProps) => {
   return (
     <View
       testID={`PlaceCard-${sanitize(place.name)}`}
-      className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+      className="bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3"
     >
       <Text
         testID={`PlaceCard-${sanitize(place.name)}-name`}

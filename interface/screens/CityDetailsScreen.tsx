@@ -53,13 +53,13 @@ const CityDetailsScreen = () => {
       </Text>
       <Text
         testID="city-currency"
-        className="text-base text-text dark:text-text-dark font-work-light mb-1"
+        className="text-xl text-text dark:text-text-dark font-work-light mb-1"
       >
         Currency: {selectedCity.currency}
       </Text>
       <Text
         testID="city-language"
-        className="text-base text-text dark:text-text-dark font-work-light mb-4"
+        className="text-xl text-text dark:text-text-dark font-work-light mb-4"
       >
         Language: {selectedCity.language}
       </Text>
