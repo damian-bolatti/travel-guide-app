@@ -20,7 +20,7 @@ exports[`CityCard render matches snapshot 1`] = `
     }
   }
   accessible={true}
-  className="bg-card-background dark:bg-card-background-dark p-4 rounded-sm mb-3"
+  className="bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3"
   collapsable={false}
   focusable={true}
   onBlur={[Function]}
@@ -58,21 +58,267 @@ exports[`CityCard render matches snapshot 1`] = `
         </Text>
       </View>
       <View
-        className="flex-row flex-wrap"
+        className="flex-row flex-wrap items-center"
         testID="city-details"
       >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={24}
+          bbWidth={24}
+          fill="none"
+          focusable={false}
+          height={24}
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          stroke="#666666"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 24,
+                "width": 24,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4284900966,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          >
+            <RNSVGRect
+              fill={null}
+              height="12"
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              rx="2"
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+              width="20"
+              x="2"
+              y="6"
+            />
+            <RNSVGCircle
+              cx="12"
+              cy="12"
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              r="2"
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            />
+            <RNSVGPath
+              d="M6 12h.01M18 12h.01"
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
         <Text
-          className="text-base text-text dark:text-text-dark font-work-light mr-2"
+          className="text-xl text-text dark:text-text-dark font-work-light mx-2"
           testID="city-currency"
         >
-          Currency: 
           EUR
         </Text>
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={24}
+          bbWidth={24}
+          fill="none"
+          focusable={false}
+          height={24}
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          stroke="#666666"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 24,
+                "width": 24,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+                "stroke",
+                "strokeWidth",
+                "strokeLinecap",
+                "strokeLinejoin",
+              ]
+            }
+            stroke={
+              {
+                "payload": 4284900966,
+                "type": 0,
+              }
+            }
+            strokeLinecap={1}
+            strokeLinejoin={1}
+            strokeWidth={2}
+          >
+            <RNSVGPath
+              d="M8.8 20v-4.1l1.9.2a2.3 2.3 0 0 0 2.164-2.1V8.3A5.37 5.37 0 0 0 2 8.25c0 2.8.656 3.054 1 4.55a5.77 5.77 0 0 1 .029 2.758L2 20"
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            />
+            <RNSVGPath
+              d="M19.8 17.8a7.5 7.5 0 0 0 .003-10.603"
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            />
+            <RNSVGPath
+              d="M17 15a3.5 3.5 0 0 0-.025-4.975"
+              fill={null}
+              propList={
+                [
+                  "fill",
+                  "stroke",
+                  "strokeWidth",
+                  "strokeLinecap",
+                  "strokeLinejoin",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4284900966,
+                  "type": 0,
+                }
+              }
+              strokeLinecap={1}
+              strokeLinejoin={1}
+              strokeWidth={2}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
         <Text
-          className="text-base text-text dark:text-text-dark font-work-light"
+          className="text-xl text-text dark:text-text-dark font-work-light mx-2"
           testID="city-language"
         >
-          Language: 
           fr
         </Text>
       </View>
@@ -87,7 +333,7 @@ exports[`CityCard render matches snapshot 1`] = `
       meetOrSlice={0}
       minX={0}
       minY={0}
-      stroke="#262626"
+      stroke="#666666"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
@@ -122,7 +368,7 @@ exports[`CityCard render matches snapshot 1`] = `
         }
         stroke={
           {
-            "payload": 4280690214,
+            "payload": 4284900966,
             "type": 0,
           }
         }
@@ -144,7 +390,7 @@ exports[`CityCard render matches snapshot 1`] = `
           }
           stroke={
             {
-              "payload": 4280690214,
+              "payload": 4284900966,
               "type": 0,
             }
           }

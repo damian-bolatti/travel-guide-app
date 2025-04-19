@@ -19,7 +19,7 @@ describe('PlaceCard', () => {
     const { getByTestId } = render(<PlaceCard place={mockPlace} />);
 
     expect(getByTestId(`${testID}-name`).props.children).toBe('Eiffel Tower');
-    expect(getByTestId(`${testID}-type`).props.children).toBe('monument');
+    expect(getByTestId(`${testID}-type`).props.children).toStrictEqual(["(", "monument", ")"]);
 
     const coords = getByTestId(`${testID}-coordinates`).props.children;
     const coordsText = Array.isArray(coords) ? coords.join('') : coords;
@@ -47,7 +47,7 @@ describe('PlaceCard', () => {
       'text-text-header',
     );
     expect(getByTestId(`${testID}-name`).props.className).toContain(
-      'dark:text-text-header-dark',
+      'text-xl font-work-bold text-text-header dark:text-text-dark mb-1',
     );
 
     expect(getByTestId(`${testID}-type`).props.className).toContain(
@@ -55,7 +55,7 @@ describe('PlaceCard', () => {
     );
     expect(getByTestId(`${testID}-type`).props.className).toContain('italic');
     expect(getByTestId(`${testID}-type`).props.className).toContain(
-      'text-icon',
+      'text-base font-work-medium text-text dark:text-text-dark italic',
     );
 
     expect(getByTestId(`${testID}-coordinates`).props.className).toContain(
