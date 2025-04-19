@@ -20,14 +20,14 @@ exports[`CityDetailsScreen matches snapshot 1`] = `
       )
     </Text>
     <Text
-      className="text-base text-text dark:text-text-dark font-work-light mb-1"
+      className="text-xl text-text dark:text-text-dark font-work-light mb-1"
       testID="city-currency"
     >
       Currency: 
       EUR
     </Text>
     <Text
-      className="text-base text-text dark:text-text-dark font-work-light mb-4"
+      className="text-xl text-text dark:text-text-dark font-work-light mb-4"
       testID="city-language"
     >
       Language: 
