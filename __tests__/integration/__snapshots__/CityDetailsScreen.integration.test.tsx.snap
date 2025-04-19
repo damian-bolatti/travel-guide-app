@@ -1,0 +1,829 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityDetailsScreen (controlled store) renders places and handles interaction 1`] = `
+<RCTScrollView
+  className="flex-1 px-4 bg-background dark:bg-background-dark"
+  contentContainerStyle={
+    {
+      "flexGrow": 1,
+    }
+  }
+  testID="city-details"
+>
+  <View>
+    <Text
+      className="text-2xl font-work-medium text-text dark:text-text-dark italic mb-1"
+      testID="city-native-name"
+    >
+      (
+      Amsterdam
+      )
+    </Text>
+    <Text
+      className="text-xl text-text dark:text-text-dark font-work-light mb-1"
+      testID="city-currency"
+    >
+      Currency: 
+      EUR
+    </Text>
+    <Text
+      className="text-xl text-text dark:text-text-dark font-work-light mb-4"
+      testID="city-language"
+    >
+      Language: 
+      Dutch
+    </Text>
+    <View
+      className="mt-4"
+      testID="place-list"
+    >
+      <Text
+        className="text-xl font-work-bold text-text-header dark:text-text-header-dark mb-2"
+        testID="place-list-title"
+      >
+        Places to visit:
+      </Text>
+      <View
+        className="bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3"
+        testID="PlaceCard-van-gogh-museum"
+      >
+        <View
+          className="flex-row justify-between items-center"
+        >
+          <View
+            className="flex-row flex-1 pr-4"
+          >
+            <View
+              className="mr-4 flex justify-center items-center"
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={62}
+                bbWidth={62}
+                fill="none"
+                focusable={false}
+                height={62}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                stroke="#666666"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 62,
+                      "width": 62,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+                width={62}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <RNSVGGroup
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                >
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="3"
+                    x2="21"
+                    y1="22"
+                    y2="22"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="6"
+                    x2="6"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="10"
+                    x2="10"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="14"
+                    x2="14"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="18"
+                    x2="18"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGPath
+                    d="M12 2 20 7 4 7z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+            <View
+              className="flex-1"
+            >
+              <Text
+                className="text-xl font-work-bold text-text-header dark:text-text-dark mb-1"
+                testID="PlaceCard-van-gogh-museum-name"
+              >
+                Van Gogh Museum
+              </Text>
+              <Text
+                className="text-base font-work-medium text-text dark:text-text-dark italic"
+                testID="PlaceCard-van-gogh-museum-type"
+              >
+                (
+                monument
+                )
+              </Text>
+              <Text
+                className="text-xs text-text font-work-light dark:text-icon-dark mt-1"
+                testID="PlaceCard-van-gogh-museum-coordinates"
+              >
+                Lat: 
+                52.3545478
+                , Lon: 
+                4.8481784
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Open Van Gogh Museum in maps"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+            testID="PlaceCard-van-gogh-museum-view-on-map"
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={24}
+              bbWidth={24}
+              fill="none"
+              focusable={false}
+              height={24}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              stroke="#666666"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 24,
+                    "width": 24,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <RNSVGGroup
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4284900966,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              >
+                <RNSVGPath
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx="12"
+                  cy="10"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  r="3"
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+            <Text
+              className="text-[10px] text-link mt-1  text-text font-work-light dark:text-icon-dark text-center"
+            >
+              View on Map
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        className="bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3"
+        testID="PlaceCard-rijksmuseum"
+      >
+        <View
+          className="flex-row justify-between items-center"
+        >
+          <View
+            className="flex-row flex-1 pr-4"
+          >
+            <View
+              className="mr-4 flex justify-center items-center"
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={62}
+                bbWidth={62}
+                fill="none"
+                focusable={false}
+                height={62}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                stroke="#666666"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 62,
+                      "width": 62,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+                width={62}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <RNSVGGroup
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                >
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="3"
+                    x2="21"
+                    y1="22"
+                    y2="22"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="6"
+                    x2="6"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="10"
+                    x2="10"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="14"
+                    x2="14"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGLine
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                    x1="18"
+                    x2="18"
+                    y1="18"
+                    y2="11"
+                  />
+                  <RNSVGPath
+                    d="M12 2 20 7 4 7z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4284900966,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+            <View
+              className="flex-1"
+            >
+              <Text
+                className="text-xl font-work-bold text-text-header dark:text-text-dark mb-1"
+                testID="PlaceCard-rijksmuseum-name"
+              >
+                Rijksmuseum
+              </Text>
+              <Text
+                className="text-base font-work-medium text-text dark:text-text-dark italic"
+                testID="PlaceCard-rijksmuseum-type"
+              >
+                (
+                monument
+                )
+              </Text>
+              <Text
+                className="text-xs text-text font-work-light dark:text-icon-dark mt-1"
+                testID="PlaceCard-rijksmuseum-coordinates"
+              >
+                Lat: 
+                52.3599971
+                , Lon: 
+                4.8852183
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Open Rijksmuseum in maps"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+            testID="PlaceCard-rijksmuseum-view-on-map"
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={24}
+              bbWidth={24}
+              fill="none"
+              focusable={false}
+              height={24}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              stroke="#666666"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 24,
+                    "width": 24,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <RNSVGGroup
+                fill={null}
+                propList={
+                  [
+                    "fill",
+                    "stroke",
+                    "strokeWidth",
+                    "strokeLinecap",
+                    "strokeLinejoin",
+                  ]
+                }
+                stroke={
+                  {
+                    "payload": 4284900966,
+                    "type": 0,
+                  }
+                }
+                strokeLinecap={1}
+                strokeLinejoin={1}
+                strokeWidth={2}
+              >
+                <RNSVGPath
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx="12"
+                  cy="10"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  r="3"
+                  stroke={
+                    {
+                      "payload": 4284900966,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+            <Text
+              className="text-[10px] text-link mt-1  text-text font-work-light dark:text-icon-dark text-center"
+            >
+              View on Map
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

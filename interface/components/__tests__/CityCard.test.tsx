@@ -55,7 +55,7 @@ describe('CityCard', () => {
       expect(card.props.className).toContain('bg-card-background');
       expect(card.props.className).toContain('dark:bg-card-background-dark');
       expect(card.props.className).toContain('p-4');
-      expect(card.props.className).toContain('rounded-sm');
+      expect(card.props.className).toContain('bg-card-background dark:bg-card-background-dark p-4 rounded-lg mb-3');
 
       expect(getByTestId('city-name').props.className).toContain('text-2xl');
       expect(getByTestId('city-name').props.className).toContain(

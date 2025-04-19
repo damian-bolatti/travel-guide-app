@@ -29,7 +29,7 @@ describe('Icon', () => {
     expect(LucideIcons.Sun).toHaveBeenCalledWith(
       expect.objectContaining({
         size: 32,
-        color: colors.icon,
+        color: colors['icon-soft'],
       }),
       {},
     );
