@@ -27,7 +27,7 @@ A mobile application built with **React Native + Expo** for exploring tourist pl
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/travel-guide-app.git
+git clone https://github.com/damian-bolatti/travel-guide-app.git
 cd travel-guide-app
 npm install
 ```
