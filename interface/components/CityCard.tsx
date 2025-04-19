@@ -44,7 +44,10 @@ const CityCard = ({ city }: CityCardProps) => {
             </Text>
           </View>
 
-          <View className="flex-row flex-wrap items-center" testID="city-details">
+          <View
+            className="flex-row flex-wrap items-center"
+            testID="city-details"
+          >
             <Icon name="Banknote" color="soft" />
             <Text
               className="text-xl text-text dark:text-text-dark font-work-light mx-2"
@@ -62,7 +65,7 @@ const CityCard = ({ city }: CityCardProps) => {
           </View>
         </View>
 
-        <Icon name="ChevronRight" color="soft"/>
+        <Icon name="ChevronRight" color="soft" />
       </View>
     </Pressable>
   );

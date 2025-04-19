@@ -19,7 +19,11 @@ describe('PlaceCard', () => {
     const { getByTestId } = render(<PlaceCard place={mockPlace} />);
 
     expect(getByTestId(`${testID}-name`).props.children).toBe('Eiffel Tower');
-    expect(getByTestId(`${testID}-type`).props.children).toStrictEqual(["(", "monument", ")"]);
+    expect(getByTestId(`${testID}-type`).props.children).toStrictEqual([
+      '(',
+      'monument',
+      ')',
+    ]);
 
     const coords = getByTestId(`${testID}-coordinates`).props.children;
     const coordsText = Array.isArray(coords) ? coords.join('') : coords;

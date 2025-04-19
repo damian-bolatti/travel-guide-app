@@ -99,7 +99,7 @@ describe('CityDetailsScreen (controlled store)', () => {
 
     expect(
       screen.getByTestId('PlaceCard-van-gogh-museum-type').props.children,
-    ).toStrictEqual(["(", "monument", ")"]);
+    ).toStrictEqual(['(', 'monument', ')']);
 
     const coords = screen.getByTestId('PlaceCard-van-gogh-museum-coordinates')
       .props.children;

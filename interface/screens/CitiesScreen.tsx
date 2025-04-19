@@ -23,7 +23,7 @@ const CitiesScreen = () => {
           className="pl-2"
           testID="go-to-settings"
         >
-          <Icon name="Settings" color="normal"/>
+          <Icon name="Settings" color="normal" />
         </Pressable>
       ),
     });

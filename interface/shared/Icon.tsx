@@ -11,7 +11,7 @@ interface IconProps {
   size?: number;
 }
 
-export const Icon = ({ name, size = 24, color = "normal" }: IconProps) => {
+export const Icon = ({ name, size = 24, color = 'normal' }: IconProps) => {
   const { theme } = useThemeStore();
   const LucideIcon = LucideIcons[name] as ComponentType<{
     size?: number;
