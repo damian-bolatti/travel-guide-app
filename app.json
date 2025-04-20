@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "travel-guide-app",
+    "name": "Travel Guide App",
     "slug": "travel-guide-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.damianbolatti.travelguideapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "75edeb97-2d91-4d93-85d4-e4a76aec687c"
+      }
     }
   }
 }

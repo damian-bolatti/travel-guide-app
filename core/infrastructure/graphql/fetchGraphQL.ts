@@ -1,25 +1,12 @@
 import NetInfo from '@react-native-community/netinfo';
-import { Platform } from 'react-native';
 import axios from 'axios';
 import { handleHTTPError } from '../../utils/errorHandler';
+import { GRAPHQL_ENDPOINT, GRAPHQL_TIMEOUT } from './config/graphqlConfig';
 
 export const fetchGraphQL = async (
   query: string,
   variables: Record<string, any> = {},
 ): Promise<any> => {
-  const GRAPHQL_ENDPOINT =
-    Platform.OS === 'web'
-      ? process.env.EXPO_PUBLIC_GRAPHQL_ENDPOINT_WEB
-      : process.env.EXPO_PUBLIC_GRAPHQL_ENDPOINT_ANDROID;
-
-  if (!GRAPHQL_ENDPOINT) {
-    throw new Error(
-      'GRAPHQL_ENDPOINT is not defined in the environment variables',
-    );
-  }
-
-  const TIMEOUT_MS = Number(process.env.EXPO_PUBLIC_GRAPHQL_TIMEOUT) || 5000;
-
   const netState = await NetInfo.fetch();
   if (!netState.isConnected) {
     throw new Error('No internet connection');
@@ -31,7 +18,7 @@ export const fetchGraphQL = async (
       { query, variables },
       {
         headers: { 'Content-Type': 'application/json' },
-        timeout: TIMEOUT_MS,
+        timeout: GRAPHQL_TIMEOUT,
       },
     );
 
