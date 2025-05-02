@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CityDetailsScreen (controlled store) renders places and handles interaction 1`] = `
+exports[`CityDetailsScreen (injected repoMock) renders places and handles interaction 1`] = `
 <RCTScrollView
   className="flex-1 px-4 bg-background dark:bg-background-dark"
   contentContainerStyle={

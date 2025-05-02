@@ -15,60 +15,72 @@ jest.mock('expo-router', () => ({
 }));
 
 jest.mock('@/core/interface/store/usePlacesStore', () => {
-  const { create } = require('zustand');
-  const { devtools } = require('zustand/middleware');
+  const { createPlacesStore } = require('@/core/interface/store/createPlacesStore');
+
+  const mockRepo = {
+    getPlacesByCityKey: {
+      execute: jest.fn().mockResolvedValue([]),
+    },
+  };
+
+  const store = createPlacesStore(mockRepo);
+
+  store.setState({
+    places: [
+      {
+        name: 'Van Gogh Museum',
+        type: 'monument',
+        coordinates: [52.3545478, 4.8481784],
+      },
+      {
+        name: 'Rijksmuseum',
+        type: 'monument',
+        coordinates: [52.3599971, 4.8852183],
+      },
+    ],
+    isLoading: false,
+    error: null,
+    fetchPlaces: jest.fn(),
+    reset: jest.fn(),
+  });
 
   return {
-    usePlacesStore: create(
-      devtools(() => ({
-        places: [
-          {
-            name: 'Van Gogh Museum',
-            type: 'monument',
-            coordinates: [52.3545478, 4.8481784],
-          },
-          {
-            name: 'Rijksmuseum',
-            type: 'monument',
-            coordinates: [52.3599971, 4.8852183],
-          },
-        ],
-        isLoading: false,
-        error: null,
-        fetchPlaces: jest.fn(),
-        reset: jest.fn(),
-      })),
-    ),
+    usePlacesStore: store,
   };
 });
 
 jest.mock('@/core/interface/store/useCitiesStore', () => {
-  const { create } = require('zustand');
-  const { devtools } = require('zustand/middleware');
+  const { createCitiesStore } = require('@/core/interface/store/createCitiesStore');
+
+  const mockRepo = {
+    getAll: async () => [],
+  };
+
+  const store = createCitiesStore(mockRepo);
+
+  store.setState({
+    selectedCity: {
+      id: 1,
+      key: 'amsterdam',
+      name: 'Amsterdam',
+      nativeName: 'Amsterdam',
+      currency: 'EUR',
+      language: 'Dutch',
+    },
+    cities: [],
+    isLoading: false,
+    error: null,
+    fetchCities: jest.fn(),
+    setSelectedCity: jest.fn(),
+    reset: jest.fn(),
+  });
 
   return {
-    useCitiesStore: create(
-      devtools(() => ({
-        cities: [],
-        selectedCity: {
-          id: 1,
-          key: 'amsterdam',
-          name: 'Amsterdam',
-          nativeName: 'Amsterdam',
-          currency: 'EUR',
-          language: 'Dutch',
-        },
-        isLoading: false,
-        error: null,
-        fetchCities: jest.fn(),
-        setSelectedCity: jest.fn(),
-        reset: jest.fn(),
-      })),
-    ),
+    useCitiesStore: store,
   };
 });
 
-describe('CityDetailsScreen (controlled store)', () => {
+describe('CityDetailsScreen (injected repoMock)', () => {
   // Step 1: Reset stores before each test
   beforeEach(() => {
     usePlacesStore.getState().reset();
@@ -76,7 +88,7 @@ describe('CityDetailsScreen (controlled store)', () => {
   });
 
   it('renders places and handles interaction', async () => {
-    // Step 2: Render the screen inside a NavigationContainer
+    // Step 2: Render the screen
     render(
       <NavigationContainer>
         <CityDetailsScreen />
@@ -88,7 +100,7 @@ describe('CityDetailsScreen (controlled store)', () => {
       expect(screen.getByTestId('PlaceCard-van-gogh-museum')).toBeTruthy();
     });
 
-    // Step 4: Assert both mocked places are rendered
+    // Step 4: Assert that both mocked places are rendered
     expect(screen.getByTestId('PlaceCard-van-gogh-museum')).toBeTruthy();
     expect(screen.getByTestId('PlaceCard-rijksmuseum')).toBeTruthy();
 
